@@ -63,11 +63,11 @@ file name : `<FileName>.<lib-type>.tsx`
 ```
 core: next.js app router(v13.4.~), react(v18.2.~), typescript
 
-state management: redux, (tanstack query)
+state management(client, server): redux, (tanstack query)
 
 style: sass(scss), module & classnames, framer-motion
 
 testing: storybook, jest, testing-library
 
-serverless: next.js api, prisma(orm), mongodb, vercel(cicd)
+serverless: notion api, next.js api, vercel(cicd)
 ```
