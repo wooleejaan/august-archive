@@ -1,7 +1,7 @@
 ---
 name: Hotfix 이슈
 about: Hotfix 이슈를 입력해 주세요
-title: ":ambulance: 제목"
+title: ":helicopter: 제목"
 labels: ""
 assignees: ""
 ---

@@ -1,7 +1,7 @@
 ---
 name: Bug 이슈
 about: Bug 이슈를 입력해 주세요
-title: ":bug: 제목"
+title: ":trollface: 제목"
 labels: ""
 assignees: ""
 ---
