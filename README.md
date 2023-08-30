@@ -69,5 +69,5 @@ style: sass(scss), module & classnames, framer-motion
 
 testing: storybook, jest, testing-library
 
-serverless: notion api, next.js api, axios, vercel(cicd)
+serverless: github api, next.js api, axios, vercel(cicd)
 ```
