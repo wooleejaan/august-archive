@@ -7,7 +7,22 @@
 
 Trunk-Based Development
 
+`feature/<specific-feature-name>/<#issue-number>`
+
 ## Conventional Commits
+
+### forcing eslint through husky
+
+```
+0. `chmod +x .husky/pre-commit` 명령어 실행 (.husky/pre-commit에 실행 권한 부여)
+1. node_modules 폴더 삭제 후 다시 npm install
+2. npx prettier --write .
+3. npm run lint
+```
+
+---
+
+### default commit convention
 
 ```
 feat: 새로운 기능 관련
@@ -42,6 +57,8 @@ lib types : `feature`, `util`, `ui`, `data-access`
 
 file name : `<FileName>.<lib-type>.tsx`
 
+domain types : `<domainName>/`, `shared/`
+
 ```
 /libs
   - /(domain)
@@ -56,6 +73,14 @@ file name : `<FileName>.<lib-type>.tsx`
     - /shared
   - ...
   - /shared
+    - types
+    - styles
+    - helpers
+    - hooks
+    - api
+    - services
+    - context(store)
+    - components
 ```
 
 ## Tech Stack
@@ -63,11 +88,11 @@ file name : `<FileName>.<lib-type>.tsx`
 ```
 core: next.js app router(v13.4.~), react(v18.2.~), typescript
 
-state management: redux, (tanstack query)
+state management(client, server): redux, (tanstack query)
 
 style: sass(scss), module & classnames, framer-motion
 
 testing: storybook, jest, testing-library
 
-serverless: next.js api, prisma(orm), mongodb, vercel(cicd)
+serverless: github api, next.js api, axios, vercel(cicd)
 ```
