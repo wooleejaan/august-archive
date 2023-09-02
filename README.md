@@ -7,6 +7,8 @@
 
 Trunk-Based Development
 
+`feature/<specific-feature-name>/<#issue-number>`
+
 ## Conventional Commits
 
 ```
