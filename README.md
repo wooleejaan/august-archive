@@ -11,6 +11,19 @@ Trunk-Based Development
 
 ## Conventional Commits
 
+### forcing eslint through husky
+
+```
+0. `chmod +x .husky/pre-commit` 명령어 실행 (.husky/pre-commit에 실행 권한 부여)
+1. node_modules 폴더 삭제 후 다시 npm install
+2. npx prettier --write .
+3. npm run lint
+```
+
+---
+
+### default commit convention
+
 ```
 feat: 새로운 기능 관련
 fix: 버그 수정 관련
