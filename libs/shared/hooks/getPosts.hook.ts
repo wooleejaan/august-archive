@@ -65,8 +65,10 @@ const getPostByName = async (path: string) => {
  * GET `/api/revalidate?path=/&secret=${process.env.MY_SECRET_TOKEN}`
  * ```
  */
-const getPosts = cache(async (path: string) => {
-  const postInfoList = await getRequestGithubApi<PostName[]>(path)
+const getPosts = cache(async (folderName: string) => {
+  const postInfoList = await getRequestGithubApi<PostName[]>(
+    `contents/${folderName}/`,
+  )
 
   const filesList = postInfoList
     .map((postInfo) => postInfo.path)
