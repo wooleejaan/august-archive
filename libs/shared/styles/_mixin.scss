@@ -1,0 +1,25 @@
+// mixins
+@mixin tablet {
+  @media only screen and (width <= 1199px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (width <= 767px) {
+    @content;
+  }
+}
+
+@mixin flexbox($direction, $justify: false, $align: false) {
+  display: flex;
+  flex-direction: $direction;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+}
