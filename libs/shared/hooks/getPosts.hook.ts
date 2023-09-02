@@ -1,3 +1,5 @@
+import { cache } from 'react'
+
 import { compileMDX } from 'next-mdx-remote/rsc'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeHighlight from 'rehype-highlight'
@@ -6,6 +8,8 @@ import rehypeSlug from 'rehype-slug'
 import { getRequestGithubApi } from '../apis/githubApi/githubApiCommon.api'
 import { getRequestGithubRaw } from '../apis/githubRaw/githubRawCommon.api'
 import { Post, PostName } from '../types/posts.type'
+
+export const revalidate = 86400
 
 const getPostByName = async (path: string) => {
   const rawMDX = await getRequestGithubRaw<string>(path, {
@@ -52,8 +56,16 @@ const getPostByName = async (path: string) => {
 
   return postObj
 }
-
-const getPosts = async (path: string) => {
+/**
+ *
+ * @description ISR 적용된 API Handler
+ * @example
+ * ```bash
+ * # revalidate 하는 방법
+ * GET `/api/revalidate?path=/&secret=${process.env.MY_SECRET_TOKEN}`
+ * ```
+ */
+const getPosts = cache(async (path: string) => {
   const postInfoList = await getRequestGithubApi<PostName[]>(path)
 
   const filesList = postInfoList
@@ -70,6 +82,6 @@ const getPosts = async (path: string) => {
   const resolvedPosts = await Promise.all(reqList)
 
   return resolvedPosts.sort((a, b) => (a.meta.date < b.meta.date ? 1 : -1))
-}
+})
 
 export { getPostByName, getPosts }
