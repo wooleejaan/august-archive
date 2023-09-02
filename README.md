@@ -57,6 +57,8 @@ lib types : `feature`, `util`, `ui`, `data-access`
 
 file name : `<FileName>.<lib-type>.tsx`
 
+domain types : `<domainName>/`, `shared/`
+
 ```
 /libs
   - /(domain)
@@ -71,6 +73,14 @@ file name : `<FileName>.<lib-type>.tsx`
     - /shared
   - ...
   - /shared
+    - types
+    - styles
+    - helpers
+    - hooks
+    - api
+    - services
+    - context(store)
+    - components
 ```
 
 ## Tech Stack
