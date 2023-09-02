@@ -85,6 +85,13 @@ domain types : `<domainName>/`, `shared/`
 
 ## Tech Stack
 
+the method of rendering posts is ISR(Incremental Static Regeneration)
+
+- revalidate and react cache
+
+[fetching data on the server with third-party libraries](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#fetching-data-on-the-server-with-third-party-libraries)
+[incremental static regeneration](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration)
+
 ```
 core: next.js app router(v13.4.~), react(v18.2.~), typescript
 
