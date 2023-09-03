@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* eslint-disable @next/next/no-img-element */
 import classNames from 'classnames/bind'
 
 import { countHeadings } from '../data-access/countHeadings.data-access'
+import { extractHeadingsId } from '../data-access/extractHeadingsId.data-access'
 import { HeadingProps, PostProps } from '../shared/types/post.type'
 import UiChildOfHeadingIdGenerator from '../ui/childOfHeadingIdGenerator.ui'
 import styles from './post.module.scss'
@@ -14,16 +13,7 @@ const cx = classNames.bind(styles)
 
 function Post({ children, ...props }: PostProps) {
   const totalHeadings = countHeadings(children, Heading1, Heading2, Heading3)
-
-  const extractedIds: string[] = []
-  const onIdExtracted = (id: string) => {
-    extractedIds.push(id)
-
-    if (totalHeadings === extractedIds.length) {
-      // ids for toc
-      console.log(extractedIds)
-    }
-  }
+  const { handleIdExtracted: onIdExtracted } = extractHeadingsId(totalHeadings)
 
   return (
     <article {...props}>
