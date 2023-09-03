@@ -95,7 +95,7 @@ the method of rendering posts is ISR(Incremental Static Regeneration)
 ```
 core: next.js app router(v13.4.~), react(v18.2.~), typescript
 
-state management(client, server): redux, (tanstack query)
+state management(client, server): recoil, (tanstack query)
 
 style: sass(scss), module & classnames, framer-motion
 
