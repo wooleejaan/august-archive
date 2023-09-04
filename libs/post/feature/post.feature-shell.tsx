@@ -139,9 +139,6 @@ function Video() {
 function CodeContainer() {
   return <div></div>
 }
-function Summary() {
-  return <header></header>
-}
 function Sources() {
   return <footer></footer>
 }
@@ -154,7 +151,6 @@ Post.SP = memo(Spacing)
 Post.I = ImageContainer
 Post.V = Video
 Post.C = CodeContainer
-Post.SH = Summary
 Post.SR = Sources
 
 export { Post }
