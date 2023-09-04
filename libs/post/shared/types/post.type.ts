@@ -28,6 +28,9 @@ interface YoutubeVideoProps {
   height?: number
   yId: string
 }
+interface CodeContainerProps extends HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
+}
 
 export type {
   PostProps,
@@ -36,4 +39,5 @@ export type {
   SpacingProps,
   ImageContainerProps,
   YoutubeVideoProps,
+  CodeContainerProps,
 }

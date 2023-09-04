@@ -69,6 +69,8 @@
 
   .imgDesc {
     max-width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
     padding: 0.5rem;
     color: $color-lgt-text-gray;
     font-size: 1.2rem;
@@ -78,4 +80,15 @@
 
 .youtubeContainer {
   margin: 3rem auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  filter: drop-shadow(1px 1px 1.3px $color-black);
+}
+
+.codeContainer {
+  width: fit-content;
+  max-width: 106rem;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  filter: drop-shadow(1px 1px 1.3px $color-black);
 }

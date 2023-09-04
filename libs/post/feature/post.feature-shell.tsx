@@ -8,6 +8,7 @@ import classNames from 'classnames/bind'
 import { countHeadings } from '../data-access/countHeadings.data-access'
 import { extractHeadingsId } from '../data-access/extractHeadingsId.data-access'
 import {
+  CodeContainerProps,
   HeadingProps,
   ImageContainerProps,
   ParagraphProps,
@@ -46,7 +47,7 @@ function Heading1({ children, text, onIdExtracted, ...props }: HeadingProps) {
   return (
     <section>
       <h1 className={cx('h1', 'ch')} {...props}>
-        {text}
+        <a href={`#${props.id}`}>{text}</a>
       </h1>
       <UiChildOfHeadingIdGenerator
         H1Componet={Heading1}
@@ -69,7 +70,7 @@ function Heading2({ children, text, onIdExtracted, ...props }: HeadingProps) {
   return (
     <section>
       <h2 className={cx('h2', 'ch')} {...props}>
-        {text}
+        <a href={`#${props.id}`}>{text}</a>
       </h2>
       <UiChildOfHeadingIdGenerator
         H1Componet={Heading1}
@@ -92,7 +93,7 @@ function Heading3({ children, text, onIdExtracted, ...props }: HeadingProps) {
   return (
     <section>
       <h3 className={cx('h3', 'ch')} {...props}>
-        {text}
+        <a href={`#${props.id}`}>{text}</a>
       </h3>
       <UiChildOfHeadingIdGenerator
         H1Componet={Heading1}
@@ -176,11 +177,15 @@ function YouTubeVideo({
     </div>
   )
 }
+function CodeContainer({ children, ...props }: CodeContainerProps) {
+  return (
+    <div className={cx('codeContainer')} {...props}>
+      {children}
+    </div>
+  )
+}
 function Sources() {
   return <footer></footer>
-}
-function CodeContainer() {
-  return <div></div>
 }
 
 Post.H1 = Heading1
@@ -190,7 +195,7 @@ Post.P = Paragraph
 Post.SP = memo(Spacing)
 Post.I = ImageContainer
 Post.Y = YouTubeVideo
-Post.SR = Sources
 Post.C = CodeContainer
+Post.SR = Sources
 
 export { Post }
