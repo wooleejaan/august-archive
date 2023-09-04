@@ -12,5 +12,10 @@ interface ParagraphProps extends HTMLAttributes<HTMLSpanElement> {
   text: string
   color?: string
 }
+interface SpacingProps extends HTMLAttributes<HTMLDivElement> {
+  children?: never
+  direction?: 'horizontal' | 'vertical'
+  size: number
+}
 
-export type { PostProps, HeadingProps, ParagraphProps }
+export type { PostProps, HeadingProps, ParagraphProps, SpacingProps }

@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
 /* eslint-disable @next/next/no-img-element */
+import { memo } from 'react'
+
 import classNames from 'classnames/bind'
 
 import { countHeadings } from '../data-access/countHeadings.data-access'
@@ -9,6 +11,7 @@ import {
   HeadingProps,
   ParagraphProps,
   PostProps,
+  SpacingProps,
 } from '../shared/types/post.type'
 import UiChildOfHeadingIdGenerator from '../ui/childOfHeadingIdGenerator.ui'
 import styles from './post.module.scss'
@@ -115,8 +118,17 @@ function Paragraph({ text, color, ...props }: ParagraphProps) {
     </p>
   )
 }
-function Spacing() {
-  return <div></div>
+function Spacing({ direction = 'vertical', size, ...props }: SpacingProps) {
+  return (
+    <div
+      style={{
+        flex: 'none',
+        width: direction === 'horizontal' ? `${size}px` : undefined,
+        height: direction === 'vertical' ? `${size}px` : undefined,
+      }}
+      {...props}
+    />
+  )
 }
 function ImageContainer() {
   return <img src="" alt="" />
@@ -138,7 +150,7 @@ Post.H1 = Heading1
 Post.H2 = Heading2
 Post.H3 = Heading3
 Post.P = Paragraph
-Post.SP = Spacing
+Post.SP = memo(Spacing)
 Post.I = ImageContainer
 Post.V = Video
 Post.C = CodeContainer
