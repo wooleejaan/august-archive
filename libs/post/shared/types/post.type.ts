@@ -17,5 +17,17 @@ interface SpacingProps extends HTMLAttributes<HTMLDivElement> {
   direction?: 'horizontal' | 'vertical'
   size: number
 }
+interface ImageContainerProps extends HTMLAttributes<HTMLImageElement> {
+  width?: number | string
+  height?: number | string
+  imgSrc: string
+  imgDesc: string
+}
 
-export type { PostProps, HeadingProps, ParagraphProps, SpacingProps }
+export type {
+  PostProps,
+  HeadingProps,
+  ParagraphProps,
+  SpacingProps,
+  ImageContainerProps,
+}

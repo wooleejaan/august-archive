@@ -9,6 +9,7 @@ import { countHeadings } from '../data-access/countHeadings.data-access'
 import { extractHeadingsId } from '../data-access/extractHeadingsId.data-access'
 import {
   HeadingProps,
+  ImageContainerProps,
   ParagraphProps,
   PostProps,
   SpacingProps,
@@ -130,8 +131,26 @@ function Spacing({ direction = 'vertical', size, ...props }: SpacingProps) {
     />
   )
 }
-function ImageContainer() {
-  return <img src="" alt="" />
+function ImageContainer({
+  width = 300,
+  height = 300,
+  imgSrc,
+  imgDesc,
+  ...props
+}: ImageContainerProps) {
+  return (
+    <>
+      <div
+        className={cx('container', 'imgContainer')}
+        style={{ width, height }}
+      >
+        <img className={cx('img')} src={imgSrc} alt={imgDesc} {...props} />
+      </div>
+      <div className={cx('container')} style={{ width }}>
+        <span className={cx('imgDesc')}>{imgDesc}</span>
+      </div>
+    </>
+  )
 }
 function Video() {
   return <div></div>
