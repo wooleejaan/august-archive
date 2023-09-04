@@ -13,9 +13,9 @@ interface PostName {
   path: string
 }
 
-type Post = {
+type PostTypes = {
   meta: PostMeta
   content: ReactElement<any, string | JSXElementConstructor<any>>
 }
 
-export type { PostMeta, PostName, Post }
+export type { PostMeta, PostName, PostTypes }

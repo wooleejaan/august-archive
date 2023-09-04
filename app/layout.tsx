@@ -1,3 +1,4 @@
+import RecoilRootProvider from '@/libs/shared/context/recoil.context'
 import '@/libs/shared/styles/global.scss'
 
 import { spoqaHanSansNeo } from '@/public/fonts/localfonts'
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={spoqaHanSansNeo.className}>
-      <body>{children}</body>
+      <body>
+        <RecoilRootProvider>{children}</RecoilRootProvider>
+      </body>
     </html>
   )
 }
