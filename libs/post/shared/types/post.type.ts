@@ -23,6 +23,11 @@ interface ImageContainerProps extends HTMLAttributes<HTMLImageElement> {
   imgSrc: string
   imgDesc: string
 }
+interface YoutubeVideoProps {
+  width?: number
+  height?: number
+  yId: string
+}
 
 export type {
   PostProps,
@@ -30,4 +35,5 @@ export type {
   ParagraphProps,
   SpacingProps,
   ImageContainerProps,
+  YoutubeVideoProps,
 }

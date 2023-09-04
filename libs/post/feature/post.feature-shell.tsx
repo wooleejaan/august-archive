@@ -13,6 +13,7 @@ import {
   ParagraphProps,
   PostProps,
   SpacingProps,
+  YoutubeVideoProps,
 } from '../shared/types/post.type'
 import UiChildOfHeadingIdGenerator from '../ui/childOfHeadingIdGenerator.ui'
 import styles from './post.module.scss'
@@ -132,8 +133,8 @@ function Spacing({ direction = 'vertical', size, ...props }: SpacingProps) {
   )
 }
 function ImageContainer({
-  width = 350,
-  height = 350,
+  width = 16 * 22,
+  height = 9 * 22,
   imgSrc,
   imgDesc,
   ...props
@@ -152,14 +153,34 @@ function ImageContainer({
     </>
   )
 }
-function Video() {
-  return <div></div>
-}
-function CodeContainer() {
-  return <div></div>
+function YouTubeVideo({
+  width = 16 * 22,
+  height = 9 * 22,
+  yId,
+}: YoutubeVideoProps) {
+  return (
+    <div
+      className={cx('youtubeContainer')}
+      style={{
+        width,
+        height,
+      }}
+    >
+      <iframe
+        src={`https://www.youtube.com/embed/${yId}`}
+        width={width}
+        height={height}
+        title="portfoilo youtube video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      />
+    </div>
+  )
 }
 function Sources() {
   return <footer></footer>
+}
+function CodeContainer() {
+  return <div></div>
 }
 
 Post.H1 = Heading1
@@ -168,8 +189,8 @@ Post.H3 = Heading3
 Post.P = Paragraph
 Post.SP = memo(Spacing)
 Post.I = ImageContainer
-Post.V = Video
-Post.C = CodeContainer
+Post.Y = YouTubeVideo
 Post.SR = Sources
+Post.C = CodeContainer
 
 export { Post }
