@@ -8,5 +8,9 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   text: string
   onIdExtracted?: (id: string) => void
 }
+interface ParagraphProps extends HTMLAttributes<HTMLSpanElement> {
+  text: string
+  color?: string
+}
 
-export type { PostProps, HeadingProps }
+export type { PostProps, HeadingProps, ParagraphProps }

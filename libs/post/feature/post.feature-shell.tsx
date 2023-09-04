@@ -5,7 +5,11 @@ import classNames from 'classnames/bind'
 
 import { countHeadings } from '../data-access/countHeadings.data-access'
 import { extractHeadingsId } from '../data-access/extractHeadingsId.data-access'
-import { HeadingProps, PostProps } from '../shared/types/post.type'
+import {
+  HeadingProps,
+  ParagraphProps,
+  PostProps,
+} from '../shared/types/post.type'
 import UiChildOfHeadingIdGenerator from '../ui/childOfHeadingIdGenerator.ui'
 import styles from './post.module.scss'
 
@@ -98,11 +102,21 @@ function Heading3({ children, text, onIdExtracted, ...props }: HeadingProps) {
     </section>
   )
 }
+function Paragraph({ text, color, ...props }: ParagraphProps) {
+  return (
+    <p
+      className={cx('paragraph')}
+      style={{
+        color,
+      }}
+      {...props}
+    >
+      {text}
+    </p>
+  )
+}
 function Spacing() {
   return <div></div>
-}
-function Paragraph() {
-  return <p></p>
 }
 function ImageContainer() {
   return <img src="" alt="" />
@@ -123,8 +137,8 @@ function Sources() {
 Post.H1 = Heading1
 Post.H2 = Heading2
 Post.H3 = Heading3
-Post.SP = Spacing
 Post.P = Paragraph
+Post.SP = Spacing
 Post.I = ImageContainer
 Post.V = Video
 Post.C = CodeContainer

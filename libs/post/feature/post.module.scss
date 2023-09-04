@@ -3,6 +3,7 @@
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   color: $color-lgt-text-default;
+  letter-spacing: -0.003rem;
 
   &:hover {
     transition: color 0.3s ease;
@@ -35,4 +36,13 @@
   @include mobile {
     font-size: 20px;
   }
+}
+
+.paragraph {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  letter-spacing: -0.003rem;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
