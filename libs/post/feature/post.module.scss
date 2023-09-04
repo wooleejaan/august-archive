@@ -1,3 +1,15 @@
+.ch {
+  display: inline-block;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: $color-lgt-text-default;
+
+  &:hover {
+    transition: color 0.3s ease;
+    color: $color-lgt-hover-default;
+  }
+}
+
 .h1 {
   font-size: 34px;
   font-weight: bold;

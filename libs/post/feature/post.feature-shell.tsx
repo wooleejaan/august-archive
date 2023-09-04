@@ -36,7 +36,7 @@ function Heading1({ children, text, onIdExtracted, ...props }: HeadingProps) {
 
   return (
     <section>
-      <h1 className={cx('h1')} {...props}>
+      <h1 className={cx('h1', 'ch')} {...props}>
         {text}
       </h1>
       <UiChildOfHeadingIdGenerator
@@ -59,7 +59,7 @@ function Heading2({ children, text, onIdExtracted, ...props }: HeadingProps) {
 
   return (
     <section>
-      <h2 className={cx('h2')} {...props}>
+      <h2 className={cx('h2', 'ch')} {...props}>
         {text}
       </h2>
       <UiChildOfHeadingIdGenerator
@@ -82,7 +82,7 @@ function Heading3({ children, text, onIdExtracted, ...props }: HeadingProps) {
 
   return (
     <section>
-      <h3 className={cx('h3')} {...props}>
+      <h3 className={cx('h3', 'ch')} {...props}>
         {text}
       </h3>
       <UiChildOfHeadingIdGenerator
