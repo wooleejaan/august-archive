@@ -22,6 +22,32 @@ import styles from './post.module.scss'
 
 const cx = classNames.bind(styles)
 
+/**
+ * @use
+ * ```tsx
+ * <Post>
+ *   <Post.H1 text="">
+ *     <Post.H2 text="">
+ *       <Post.H3 text="">
+ *         <Post.P text="" color="" />
+ *       </Post.H3>
+ *     </Post.H2>
+ *   </Post.H1>
+ *   <Post.H1>
+ *     <Post.Y yId="" />
+ *     <Post.I imgSrc="" imgDesc="" />
+ *     <Post.C>
+ *
+ *     ```tsx
+ *     ```
+ *
+ *     </Post.C>
+ *
+ *     <Post.SR loq={["", "", ""]} />
+ *   </Post.H1>
+ * </Post>
+ * ```
+ */
 function Post({ children, ...props }: PostProps) {
   const totalHeadings = countHeadings(children, Heading1, Heading2, Heading3)
   const { handleIdExtracted: onIdExtracted } = extractHeadingsId(totalHeadings)
