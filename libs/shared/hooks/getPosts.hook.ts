@@ -5,9 +5,11 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 
+import { Post } from '@/libs/post/feature/post.feature-shell'
+
 import { getRequestGithubApi } from '../apis/githubApi/githubApiCommon.api'
 import { getRequestGithubRaw } from '../apis/githubRaw/githubRawCommon.api'
-import { Post, PostName } from '../types/posts.type'
+import { PostName, PostTypes } from '../types/posts.type'
 
 export const revalidate = 86400
 
@@ -23,7 +25,7 @@ const getPostByName = async (path: string) => {
   }>({
     source: rawMDX,
     components: {
-      // push components
+      Post,
     },
     options: {
       parseFrontmatter: true,
@@ -44,7 +46,7 @@ const getPostByName = async (path: string) => {
 
   const id = path.replace(/\.mdx$/, '')
 
-  const postObj: Post = {
+  const postObj: PostTypes = {
     meta: {
       id,
       title: frontmatter.title,
@@ -74,7 +76,7 @@ const getPosts = cache(async (folderName: string) => {
     .map((postInfo) => postInfo.path)
     .filter((path2) => path2.endsWith('.mdx'))
 
-  const reqList: Array<Promise<Post>> = []
+  const reqList: Array<Promise<PostTypes>> = []
 
   filesList.forEach((file) => {
     const promisePost = getPostByName(file)
