@@ -93,7 +93,8 @@ export default function UiChildOfHeadingIdGenerator({
             </Fragment>
           )
         }
-        return null
+        // 그 외 나머지 요소가 올 경우 그대로 렌더링
+        return child
       })}
     </>
   )
