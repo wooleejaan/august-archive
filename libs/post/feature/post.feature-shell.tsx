@@ -132,8 +132,8 @@ function Spacing({ direction = 'vertical', size, ...props }: SpacingProps) {
   )
 }
 function ImageContainer({
-  width = 300,
-  height = 300,
+  width = 350,
+  height = 350,
   imgSrc,
   imgDesc,
   ...props

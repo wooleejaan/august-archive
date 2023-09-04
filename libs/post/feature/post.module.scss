@@ -57,14 +57,14 @@
   border-radius: 1rem;
 
   &.imgContainer {
-    filter: drop-shadow(1px 1px 1.2px $color-black);
+    filter: drop-shadow(1px 1px 1.3px $color-black);
   }
 
   .img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .imgDesc {
