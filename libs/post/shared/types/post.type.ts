@@ -31,6 +31,10 @@ interface YoutubeVideoProps {
 interface CodeContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
 }
+interface SourcesProps extends HTMLAttributes<HTMLDivElement> {
+  children?: never
+  loq: string[]
+}
 
 export type {
   PostProps,
@@ -40,4 +44,5 @@ export type {
   ImageContainerProps,
   YoutubeVideoProps,
   CodeContainerProps,
+  SourcesProps,
 }

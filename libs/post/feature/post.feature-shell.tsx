@@ -13,6 +13,7 @@ import {
   ImageContainerProps,
   ParagraphProps,
   PostProps,
+  SourcesProps,
   SpacingProps,
   YoutubeVideoProps,
 } from '../shared/types/post.type'
@@ -184,8 +185,19 @@ function CodeContainer({ children, ...props }: CodeContainerProps) {
     </div>
   )
 }
-function Sources() {
-  return <footer></footer>
+function Sources({ loq, ...props }: SourcesProps) {
+  return (
+    <footer {...props}>
+      <h1 className={cx('h1', 'ch')}>
+        <a href="#출처">출처</a>
+      </h1>
+      {loq.map((quotation) => (
+        <p className={cx('paragraph')} key={quotation}>
+          {quotation}
+        </p>
+      ))}
+    </footer>
+  )
 }
 
 Post.H1 = Heading1
