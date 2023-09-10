@@ -8,7 +8,7 @@ import { logOnDev } from '../../helpers/logOnDev.helpers'
 import { CustomAxiosInterface } from '../../types/instance.type'
 
 export const githubApiInstance: CustomAxiosInterface = axios.create({
-  baseURL: 'https://api.github.com/repos/wooleejaan/august-archive-posts',
+  baseURL: `${process.env.NEXT_PUBLIC_REPOS_BASE_URL}`,
   headers: {
     Accept: 'application/vnd.github+json',
     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,

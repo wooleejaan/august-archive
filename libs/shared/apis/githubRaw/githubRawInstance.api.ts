@@ -8,8 +8,7 @@ import { logOnDev } from '../../helpers/logOnDev.helpers'
 import { CustomAxiosInterface } from '../../types/instance.type'
 
 export const githubRawInstance: CustomAxiosInterface = axios.create({
-  baseURL:
-    'https://raw.githubusercontent.com/wooleejaan/august-archive-posts/main',
+  baseURL: `${process.env.NEXT_PUBLIC_RAWS_BASE_URL}`,
   headers: {
     Accept: 'application/vnd.github+json',
     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
