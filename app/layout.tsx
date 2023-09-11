@@ -1,7 +1,7 @@
 import RecoilRootProvider from '@/libs/shared/context/recoil.context'
 import '@/libs/shared/styles/global.scss'
 
-import { spoqaHanSansNeo } from '@/public/fonts/localfonts'
+import { PureunJeonnam } from '@/public/fonts/localfonts'
 
 import { META_ROOT } from './_meta'
 
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko" className={spoqaHanSansNeo.className}>
+    <html lang="ko" className={PureunJeonnam.className}>
       <body>
         <RecoilRootProvider>{children}</RecoilRootProvider>
       </body>

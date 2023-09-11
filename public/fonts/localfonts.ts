@@ -1,15 +1,20 @@
 import localFont from 'next/font/local'
 
-export const spoqaHanSansNeo = localFont({
+export const PureunJeonnam = localFont({
   src: [
     {
-      path: './SpoqaHanSansNeo-Regular.woff2',
+      path: './PureunJeonnam.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './SpoqaHanSansNeo-Bold.woff2',
-      weight: '700',
+      path: './PureunJeonnam-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './PureunJeonnam-Bold.woff2',
+      weight: '600',
       style: 'normal',
     },
   ],
