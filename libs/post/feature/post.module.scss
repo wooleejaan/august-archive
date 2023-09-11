@@ -1,3 +1,14 @@
+.postWrapper {
+  width: 100%;
+  max-width: calc(1920px - 106rem);
+  margin: 0 auto;
+  padding: 12.8rem 0;
+
+  @include tablet {
+    width: calc(100% - 6rem);
+  }
+}
+
 .ch {
   display: inline-block;
   margin-top: 2.5rem;
@@ -13,7 +24,7 @@
 
 .h1 {
   font-size: 34px;
-  font-weight: bold;
+  font-weight: 600;
 
   @include mobile {
     font-size: 24px;
@@ -22,7 +33,7 @@
 
 .h2 {
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 500;
 
   @include mobile {
     font-size: 22px;
@@ -31,7 +42,7 @@
 
 .h3 {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 500;
 
   @include mobile {
     font-size: 20px;
@@ -39,7 +50,7 @@
 }
 
 .paragraph {
-  margin-left: 1rem;
+  // margin-left: 1rem;
   margin-block-start: 1em;
   margin-block-end: 1em;
   color: $august-dark-olive;
@@ -89,7 +100,8 @@
 
 .codeContainer {
   width: fit-content;
-  max-width: 106rem;
+
+  // max-width: 106rem;
   margin: 2rem auto;
   filter: drop-shadow(1px 1px 1.3px $august-black);
 
