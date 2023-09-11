@@ -20,13 +20,14 @@
   }
 
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 0.6rem;
+    background: $august-ivory;
   }
 
   &::-webkit-scrollbar-thumb {
     height: 30%;
-    border-radius: 10px;
-    background: #e1e1e1;
+    border-radius: 1rem;
+    background: $august-grey-olive;
   }
 }
 
@@ -38,7 +39,7 @@ html {
 
 body {
   width: 100%;
-  background-color: $color-lgt-bg-default;
+  background-color: $august-ivory;
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -132,7 +133,7 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: $color-black;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -187,6 +188,6 @@ button {
 input,
 textarea,
 button {
-  color: $color-black;
+  color: $august-dark-olive;
   font-family: inherit;
 }

@@ -8,16 +8,16 @@
   margin-bottom: 0.875rem;
   padding: 0 1rem;
   border-radius: 1rem;
-  background-color: $color-lgt-text-default;
-  color: $color-lgt-bg-default;
+  background-color: $august-ivory;
+  color: $august-dark-olive;
   font-weight: 500;
   letter-spacing: -0.003rem;
   text-align: center;
   vertical-align: middle;
-  filter: drop-shadow(0.5px 0.5px 0.5px $color-lgt-text-default);
+  filter: drop-shadow(0.5px 0.5px 0.5px $august-black);
 
   &:hover {
     transition: color 0.3s ease;
-    background-color: $color-lgt-hover-default;
+    color: $august-dark-olive;
   }
 }

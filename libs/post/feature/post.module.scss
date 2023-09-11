@@ -2,12 +2,12 @@
   display: inline-block;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  color: $color-lgt-text-default;
+  color: $august-khaki-olive;
   letter-spacing: -0.003rem;
 
   &:hover {
     transition: color 0.3s ease;
-    color: $color-lgt-hover-default;
+    color: $august-dark-olive;
   }
 }
 
@@ -42,6 +42,7 @@
   margin-left: 1rem;
   margin-block-start: 1em;
   margin-block-end: 1em;
+  color: $august-dark-olive;
   letter-spacing: -0.003rem;
   line-height: 1.7;
   word-break: keep-all;
@@ -58,7 +59,7 @@
   border-radius: 1rem;
 
   &.imgContainer {
-    filter: drop-shadow(1px 1px 1.3px $color-black);
+    filter: drop-shadow(1px 1px 1.3px $august-black);
   }
 
   .img {
@@ -73,7 +74,7 @@
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
-    color: $color-lgt-text-gray;
+    color: $august-grey-olive;
     font-size: 1.2rem;
     text-align: center;
   }
@@ -83,13 +84,16 @@
   margin: 3rem auto;
   overflow: hidden;
   border-radius: 1rem;
-  filter: drop-shadow(1px 1px 1.3px $color-black);
+  filter: drop-shadow(1px 1px 1.3px $august-black);
 }
 
 .codeContainer {
   width: fit-content;
   max-width: 106rem;
   margin: 2rem auto;
-  border-radius: 1rem;
-  filter: drop-shadow(1px 1px 1.3px $color-black);
+  filter: drop-shadow(1px 1px 1.3px $august-black);
+
+  & code {
+    border-radius: 1rem;
+  }
 }
