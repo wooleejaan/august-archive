@@ -173,7 +173,12 @@ function ImageContainer({
         className={cx('container', 'imgContainer')}
         style={{ width, height }}
       >
-        <img className={cx('img')} src={imgSrc} alt={imgDesc} {...props} />
+        <img
+          className={cx('img')}
+          src={`${process.env.NEXT_PUBLIC_RAWS_BASE_URL}/images/${imgSrc}`}
+          alt={imgDesc}
+          {...props}
+        />
       </div>
       <div className={cx('container')} style={{ width }}>
         <span className={cx('imgDesc')}>{imgDesc}</span>
