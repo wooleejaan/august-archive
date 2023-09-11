@@ -53,7 +53,7 @@ function Post({ children, ...props }: PostProps) {
   const { handleIdExtracted: onIdExtracted } = extractHeadingsId(totalHeadings)
 
   return (
-    <article {...props}>
+    <article className={cx('postWrapper')} {...props}>
       <UiChildOfHeadingIdGenerator
         H1Componet={Heading1}
         H2Componet={Heading2}
