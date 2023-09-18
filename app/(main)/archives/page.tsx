@@ -1,9 +1,20 @@
 // import 'highlight.js/styles/github-dark.css'
-import { PartialPageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
-
 import { notFound } from 'next/navigation'
 
 import { getPages } from '@/libs/shared/helpers/notion.helpers'
+
+interface PartialPageObjectResponseMore {
+  object: 'page'
+  id: string
+  properties?: {
+    Slug: {
+      rich_text: Array<{ plain_text: string }>
+    }
+    Title: {
+      title: Array<{ plain_text: string }>
+    }
+  }
+}
 
 export default async function ArchivesPage({
   searchParams,
@@ -17,7 +28,7 @@ export default async function ArchivesPage({
   const archiveList: Array<{ slug: string; title: string }> = []
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const archive of archives.results as PartialPageObjectResponse[]) {
+  for (const archive of archives.results as PartialPageObjectResponseMore[]) {
     archiveList.push({
       slug: archive.properties?.Slug.rich_text[0].plain_text as string,
       title: archive.properties?.Title.title[0].plain_text as string,
