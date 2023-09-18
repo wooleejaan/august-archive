@@ -1,23 +1,20 @@
 // import 'highlight.js/styles/github-dark.css'
+import { notFound } from 'next/navigation'
+
 import { getPages } from '@/libs/shared/helpers/notion.helpers'
 import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
 
-export default async function HomePage() {
-  const [archives, projects] = await Promise.all([
-    getPages('archive'),
-    getPages('project'),
-  ])
+export default async function ArchivesPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string }
+}) {
+  const archives = await getPages('archive', 10, searchParams.cursor)
+  if (!archives) notFound()
 
-  const projectList: Array<{ slug: string; title: string }> = []
+  const nextCursor = archives.next_cursor
   const archiveList: Array<{ slug: string; title: string }> = []
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const page of projects.results as PartialPageObjectResponseMore[]) {
-    projectList.push({
-      slug: page.properties?.Slug.rich_text[0].plain_text as string,
-      title: page.properties?.Title.title[0].plain_text as string,
-    })
-  }
   // eslint-disable-next-line no-restricted-syntax
   for (const archive of archives.results as PartialPageObjectResponseMore[]) {
     archiveList.push({
@@ -26,5 +23,7 @@ export default async function HomePage() {
     })
   }
 
-  return <div>home page</div>
+  console.log(archiveList, nextCursor)
+
+  return <div>archive page</div>
 }
