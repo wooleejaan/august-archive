@@ -1,18 +1,6 @@
 // import 'highlight.js/styles/github-dark.css'
 import { getPages } from '@/libs/shared/helpers/notion.helpers'
-
-interface PartialPageObjectResponseMore {
-  object: 'page'
-  id: string
-  properties?: {
-    Slug: {
-      rich_text: Array<{ plain_text: string }>
-    }
-    Title: {
-      title: Array<{ plain_text: string }>
-    }
-  }
-}
+import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
 
 export default async function HomePage() {
   const [archives, projects] = await Promise.all([
