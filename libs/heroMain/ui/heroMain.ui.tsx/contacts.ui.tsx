@@ -29,7 +29,7 @@ export default function UiContacts() {
         target="_blank"
         className={cx('imgContainer')}
       >
-        <img src="/images/email.png" alt="email" className={cx('img')} />
+        <img src="/images/email.svg" alt="email" className={cx('img')} />
       </Link>
     </div>
   )

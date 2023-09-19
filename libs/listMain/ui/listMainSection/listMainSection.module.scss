@@ -4,7 +4,7 @@
       position: relative;
       margin-block-start: 0.25em;
       margin-block-end: 0.125em;
-      color: $august-khaki-olive;
+      color: $august-black;
       font-size: 1.8rem;
       font-weight: 400;
       letter-spacing: -0.003rem;
@@ -14,7 +14,7 @@
 
       &:hover {
         transition: 0.3s;
-        color: $august-dark-olive;
+        color: $august-dark-grey;
       }
     }
 
@@ -22,7 +22,7 @@
       position: relative;
       margin-block-start: 0.25em;
       margin-block-end: 0.125em;
-      color: $august-grey-olive;
+      color: $august-dark-grey;
       font-size: 1.4rem;
       font-weight: 400;
       letter-spacing: -0.003rem;
@@ -35,7 +35,7 @@
       position: relative;
       margin-block-start: 0.25em;
       margin-block-end: 0.125em;
-      color: $august-grey-olive;
+      color: $august-light-grey;
       font-size: 1.1rem;
       font-weight: 400;
       letter-spacing: -0.003rem;

@@ -41,7 +41,7 @@ export default function ListMainSection({
             <p className={cx('date')}>{createdDate}</p>
           </Link>
           <UiSpacing size={32} />
-          <UiDividing lineWeight={0.1} lineColor="#424030" lineOpacity={0.1} />
+          <UiDividing lineWeight={0.1} lineColor="#d1d1d1" lineOpacity={0.1} />
         </>
       ))}
     </ol>

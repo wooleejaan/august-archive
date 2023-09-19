@@ -22,8 +22,8 @@ export default function UiListMain({ children, listTitle }: UiListMainProps) {
         <Heading3 id={listTitle}>
           {listTitle[0].toUpperCase() + listTitle.slice(1)}
         </Heading3>
-        <UiSpacing size={12} />
-        <UiDividing lineColor="#424030" />
+        <UiSpacing size={6} />
+        <UiDividing lineColor="#d1d1d1" />
       </section>
       <article className={cx('listContainer')}>{children}</article>
     </article>

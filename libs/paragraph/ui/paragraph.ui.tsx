@@ -8,6 +8,8 @@ const cx = classNames.bind(styles)
 export default function UiParagraph({
   children,
   color,
+  fontWeight,
+  fontSize,
   ...props
 }: ParagraphProps) {
   return (
@@ -15,6 +17,8 @@ export default function UiParagraph({
       className={cx('paragraph')}
       style={{
         color,
+        fontWeight,
+        fontSize,
       }}
       {...props}
     >

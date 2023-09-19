@@ -29,6 +29,11 @@
           height: 1.8rem;
         }
 
+        &:hover {
+          filter: invert(45%) sepia(3%) saturate(7%) hue-rotate(315deg)
+            brightness(88%) contrast(102%);
+        }
+
         .img {
           display: block;
           width: 100%;

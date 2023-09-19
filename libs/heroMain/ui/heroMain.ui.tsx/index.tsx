@@ -18,7 +18,9 @@ export default function UiHeroMain({ children }: HeroMainProps) {
           새로운 깨달음을 얻는 순간에 가장 큰 기쁨을 느끼며, 기술적으로 문제를
           해결할 때 보람을 느낍니다. 또한 배운 지식을 글로 정리하는 걸 즐깁니다.
         </UiParagraph>
-        <UiParagraph color="#8c8b79">front-end developer.</UiParagraph>
+        <UiParagraph color="#d1d1d1" fontWeight={300} fontSize={13.5}>
+          front-end developer
+        </UiParagraph>
         <UiContacts />
       </section>
       <article className={cx('previewContainer')}>{children}</article>

@@ -21,13 +21,13 @@
 
   &::-webkit-scrollbar {
     width: 0.6rem;
-    background: $august-ivory;
+    background: $august-background;
   }
 
   &::-webkit-scrollbar-thumb {
     height: 30%;
     border-radius: 1rem;
-    background: $august-grey-olive;
+    background: $august-dark-grey;
   }
 }
 
@@ -40,7 +40,7 @@ html {
 
 body {
   width: 100%;
-  background-color: $august-ivory;
+  background-color: $august-background;
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -189,6 +189,5 @@ button {
 input,
 textarea,
 button {
-  color: $august-dark-olive;
   font-family: inherit;
 }

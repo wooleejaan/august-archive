@@ -1,6 +1,6 @@
 .link {
   position: relative;
-  color: $august-grey-olive !important;
+  color: $august-dark-grey !important;
   font-size: 12px;
 
   &::after {
@@ -11,7 +11,7 @@
     width: 0;
     height: 1px;
     transition: 0.3s;
-    background-color: $august-khaki-olive;
+    background-color: $august-light-grey;
   }
 
   &:hover::after {
@@ -20,6 +20,6 @@
 
   &:hover {
     transition: 0.3s;
-    color: $august-khaki-olive !important;
+    color: $august-light-grey !important;
   }
 }
