@@ -1,0 +1,15 @@
+.listWrapper {
+  width: 100%;
+  max-width: calc(1920px - 126rem);
+  margin: 0 auto;
+  padding: 12.8rem 0;
+
+  @include tablet {
+    width: calc(100% - 6rem);
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
