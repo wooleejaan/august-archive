@@ -1,6 +1,8 @@
 import RecoilRootProvider from '@/libs/shared/context/recoil.context'
 import '@/libs/shared/styles/global.scss'
 
+import UiFooter from '@/libs/footer/ui/footer.ui'
+
 import { PureunJeonnam } from '@/public/fonts/localfonts'
 
 import { META_ROOT } from './_meta'
@@ -15,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="ko" className={PureunJeonnam.className}>
       <body>
-        <RecoilRootProvider>{children}</RecoilRootProvider>
+        <RecoilRootProvider>
+          {children}
+          <UiFooter />
+        </RecoilRootProvider>
       </body>
     </html>
   )
