@@ -12,12 +12,7 @@ interface UiDotsProps {
 
 export default function UiDots({ sectionType }: UiDotsProps) {
   return (
-    <Link
-      href={`/${sectionType}`}
-      shallow={true}
-      replace={true}
-      className={cx('dots')}
-    >
+    <Link href={`/${sectionType}`} shallow={true} className={cx('dots')}>
       <div className={cx('dot')}></div>
       <div className={cx('dot')}></div>
       <div className={cx('dot')}></div>
