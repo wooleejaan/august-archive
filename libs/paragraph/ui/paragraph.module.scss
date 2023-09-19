@@ -1,0 +1,10 @@
+.paragraph {
+  // margin-left: 1rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  color: $august-dark-olive;
+  letter-spacing: -0.003rem;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
