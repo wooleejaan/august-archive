@@ -1,0 +1,21 @@
+.ch {
+  display: inline-block;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: $august-khaki-olive;
+  letter-spacing: -0.003rem;
+
+  &:hover {
+    transition: color 0.3s ease;
+    color: $august-dark-olive;
+  }
+}
+
+.h3 {
+  font-size: 24px;
+  font-weight: 500;
+
+  @include mobile {
+    font-size: 20px;
+  }
+}

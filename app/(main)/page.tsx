@@ -2,6 +2,10 @@
 import { getPages } from '@/libs/shared/helpers/notion.helpers'
 import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
 
+import HeroMain from '@/libs/heroMain/feature/heroMain.feature'
+import HeroMainArchives from '@/libs/heroMain/feature/heroMainArchives.feature'
+import HeroMainProjects from '@/libs/heroMain/feature/heroMainProjects.feature'
+
 export default async function HomePage() {
   const [archives, projects] = await Promise.all([
     getPages('archive'),
@@ -26,5 +30,10 @@ export default async function HomePage() {
     })
   }
 
-  return <div>home page</div>
+  return (
+    <HeroMain>
+      <HeroMainProjects section={projectList} />
+      <HeroMainArchives section={archiveList} />
+    </HeroMain>
+  )
 }

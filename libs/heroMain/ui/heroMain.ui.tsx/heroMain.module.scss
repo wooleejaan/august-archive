@@ -1,0 +1,19 @@
+.heroWrapper {
+  width: 100%;
+  max-width: calc(1920px - 126rem);
+  margin: 0 auto;
+  padding: 16.8rem 0;
+
+  @include tablet {
+    width: calc(100% - 6rem);
+  }
+
+  .bioContainer {
+    margin-bottom: 3.2rem;
+  }
+
+  .previewContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
