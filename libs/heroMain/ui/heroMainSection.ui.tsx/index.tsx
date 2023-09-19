@@ -23,8 +23,14 @@ export default function UiHeroMainSection({
       </Heading3>
       <ol className={cx('previewContainer')}>
         {section.map(({ slug, title }) => (
-          <li key={title} className={cx('list')}>
-            <Link href={`/${sectionType}/${slug}`}>{title}</Link>
+          <li key={title}>
+            <Link
+              href={`/${sectionType}/${slug}`}
+              shallow={true}
+              replace={true}
+            >
+              <span className={cx('list')}>{title}</span>
+            </Link>
           </li>
         ))}
       </ol>
