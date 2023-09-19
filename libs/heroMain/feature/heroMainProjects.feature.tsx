@@ -1,4 +1,4 @@
-import { HeroMainSectionProps } from '../shared/types/HeroMainSection.type'
+import { HeroMainSectionProps } from '../shared/types/heroMain.type'
 import UiHeroMainSection from '../ui/heroMainSection.ui.tsx'
 
 export default function HeroMainProjects({ section }: HeroMainSectionProps) {

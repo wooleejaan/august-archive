@@ -1,3 +1,7 @@
+interface HeroMainProps {
+  children: React.ReactNode
+}
+
 interface SectionProps {
   slug: string
   title: string
@@ -11,4 +15,4 @@ interface HeroMainSectionProps {
   section: SectionProps[]
 }
 
-export type { SectionTypeProps, HeroMainSectionProps }
+export type { HeroMainProps, SectionTypeProps, HeroMainSectionProps }

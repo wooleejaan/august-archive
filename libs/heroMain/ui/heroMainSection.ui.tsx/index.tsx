@@ -7,7 +7,7 @@ import Heading3 from '@/libs/heading3/ui/heading3.ui'
 import {
   HeroMainSectionProps,
   SectionTypeProps,
-} from '../../shared/types/HeroMainSection.type'
+} from '../../shared/types/heroMain.type'
 import styles from './heroMainSection.module.scss'
 
 const cx = classNames.bind(styles)
