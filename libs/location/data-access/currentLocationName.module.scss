@@ -1,0 +1,25 @@
+.link {
+  position: relative;
+  color: $august-grey-olive !important;
+  font-size: 12px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    transition: 0.3s;
+    background-color: $august-khaki-olive;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:hover {
+    transition: 0.3s;
+    color: $august-khaki-olive !important;
+  }
+}
