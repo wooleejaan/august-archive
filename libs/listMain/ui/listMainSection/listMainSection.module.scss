@@ -1,0 +1,47 @@
+.sectionContainer {
+  .section {
+    .title {
+      position: relative;
+      margin-block-start: 0.25em;
+      margin-block-end: 0.125em;
+      color: $august-khaki-olive;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: -0.003rem;
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+
+      &:hover {
+        transition: 0.3s;
+        color: $august-dark-olive;
+      }
+    }
+
+    .subTitle {
+      position: relative;
+      margin-block-start: 0.25em;
+      margin-block-end: 0.125em;
+      color: $august-grey-olive;
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: -0.003rem;
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .date {
+      position: relative;
+      margin-block-start: 0.25em;
+      margin-block-end: 0.125em;
+      color: $august-grey-olive;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: -0.003rem;
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+  }
+}
