@@ -28,7 +28,7 @@ export default function ListMainSection({
   return (
     <ol className={cx('sectionContainer')}>
       {section.map(({ slug, title, subTitle, createdDate }) => (
-        <>
+        <li key={slug}>
           <UiSpacing size={32} />
           <Link
             href={`/${sectionType}/${slug}`}
@@ -42,7 +42,7 @@ export default function ListMainSection({
           </Link>
           <UiSpacing size={32} />
           <UiDividing lineWeight={0.1} lineColor="#d1d1d1" lineOpacity={0.1} />
-        </>
+        </li>
       ))}
     </ol>
   )
