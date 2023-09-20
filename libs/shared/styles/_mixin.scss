@@ -23,3 +23,20 @@
     align-items: $align;
   }
 }
+
+@mixin fade-in-animation($time: 1.2s) {
+  @keyframes fade-in-bottom {
+    from {
+      transform: translate3d(0, -5px, 0);
+      opacity: 0;
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  // animation: fade-in-bottom 1.2s cubic-bezier(0, 0, 0.2, 1) forwards;
+  animation: fade-in-bottom $time ease-in-out;
+}
