@@ -5,6 +5,7 @@ import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
 
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
+import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
 export default async function ArchivesPage({
   searchParams,
@@ -33,7 +34,7 @@ export default async function ArchivesPage({
   }
 
   return (
-    <UiListMain listTitle="archives">
+    <UiListMain listTitle="archives" location={<CurrentLocation />}>
       <ListMainSection section={archiveList} sectionType="archives" />
     </UiListMain>
   )

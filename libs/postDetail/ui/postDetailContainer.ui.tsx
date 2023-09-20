@@ -3,7 +3,6 @@ import classNames from 'classnames/bind'
 import ChipContainer from '@/libs/chip/chipContainer.feature'
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import Heading3 from '@/libs/heading3/ui/heading3.ui'
-import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 
 import styles from './postDetailContainer.module.scss'
@@ -17,6 +16,7 @@ interface UiPostDetailContainerProps {
   category: string[]
   slug: string
   title: string
+  location: React.ReactElement
 }
 
 export default function UiPostDetailContainer({
@@ -25,11 +25,12 @@ export default function UiPostDetailContainer({
   subTitle,
   category,
   title,
+  location,
 }: UiPostDetailContainerProps) {
   return (
     <article className={cx('detailWrapper')}>
       <section>
-        <CurrentLocation />
+        {location}
         <Heading3 id={title} color="#666">
           {title[0].toUpperCase() + title.slice(1)}
         </Heading3>

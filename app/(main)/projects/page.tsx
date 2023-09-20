@@ -5,6 +5,7 @@ import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
 
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
+import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
 export default async function ProjectsPage({
   searchParams,
@@ -33,7 +34,7 @@ export default async function ProjectsPage({
   }
 
   return (
-    <UiListMain listTitle="projects">
+    <UiListMain listTitle="projects" location={<CurrentLocation />}>
       <ListMainSection section={projectList} sectionType="projects" />
     </UiListMain>
   )

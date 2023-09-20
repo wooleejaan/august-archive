@@ -2,7 +2,6 @@ import classNames from 'classnames/bind'
 
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import Heading3 from '@/libs/heading3/ui/heading3.ui'
-import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 
 import styles from './listMain.module.scss'
@@ -12,13 +11,18 @@ const cx = classNames.bind(styles)
 interface UiListMainProps {
   children: React.ReactNode
   listTitle: 'projects' | 'archives'
+  location: React.ReactElement
 }
 
-export default function UiListMain({ children, listTitle }: UiListMainProps) {
+export default function UiListMain({
+  children,
+  listTitle,
+  location,
+}: UiListMainProps) {
   return (
     <article className={cx('listWrapper')}>
       <section>
-        <CurrentLocation />
+        {location}
         <Heading3 id={listTitle}>
           {listTitle[0].toUpperCase() + listTitle.slice(1)}
         </Heading3>
