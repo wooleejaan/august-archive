@@ -10,16 +10,30 @@ import {
   getPageContent,
   notionClient,
 } from '@/libs/shared/helpers/notion.helpers'
+import { PartialDetailPageObjectResponseMore } from '@/libs/shared/types/page.type'
+
+import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
 
 export default async function ArchiveDetailPage({
   params,
 }: {
   params: { slug: string }
 }) {
-  const post = await getPageBySlug(params.slug, 'archive')
-  if (!post) notFound()
+  const archive = await getPageBySlug(params.slug, 'archive')
+  if (!archive) notFound()
 
-  const content = await getPageContent(post.id)
+  const polishedProps =
+    archive.properties as unknown as PartialDetailPageObjectResponseMore
+
+  const archiveInfo = {
+    createdTime: new Date(archive.created_time).toLocaleDateString(),
+    subTitle: polishedProps?.SubTitle.rich_text[0].plain_text,
+    category: polishedProps?.Category.multi_select.map((tag) => tag.name),
+    slug: polishedProps?.Slug.rich_text[0].plain_text,
+    title: polishedProps?.Title.title[0].plain_text,
+  }
+
+  const content = await getPageContent(archive.id)
 
   const notionRenderer = new NotionRenderer({
     client: notionClient,
@@ -29,14 +43,5 @@ export default async function ArchiveDetailPage({
   notionRenderer.use(bookmarkPlugin(undefined))
   const html = await notionRenderer.render(...content)
 
-  return (
-    <div dangerouslySetInnerHTML={{ __html: html }}></div>
-    // <Post
-    //   title={(post.properties.Title as any).title[0].plain_text}
-    //   bannerImage={(post.properties.BannerImage as any).url}
-    //   bannerImageWidth={(post.properties.BannerImageWidth as any).number}
-    //   bannerImageHeight={(post.properties.BannerImageHeight as any).number}
-    //   content={html}
-    // />
-  )
+  return <UiPostDetailContainer content={html} {...archiveInfo} />
 }

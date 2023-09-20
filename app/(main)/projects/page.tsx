@@ -1,4 +1,3 @@
-// import 'highlight.js/styles/github-dark.css'
 import { notFound } from 'next/navigation'
 
 import { getPages } from '@/libs/shared/helpers/notion.helpers'
