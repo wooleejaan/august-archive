@@ -282,6 +282,11 @@ p {
     }
   }
 
+  & > a.notion-text-href {
+    color: $august-black;
+    border-bottom: 1px solid $august-black;
+  }
+
   & > span {
     height: 1.8rem;
 
