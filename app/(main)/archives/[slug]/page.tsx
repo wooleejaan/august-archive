@@ -2,6 +2,7 @@ import bookmarkPlugin from '@notion-render/bookmark-plugin'
 import { NotionRenderer } from '@notion-render/client'
 // Plugins
 import hljsPlugin from '@notion-render/hljs-plugin'
+import 'highlight.js/styles/github-dark.css'
 
 import { notFound } from 'next/navigation'
 
