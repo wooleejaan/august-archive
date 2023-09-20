@@ -1,4 +1,6 @@
 .ch {
+  @include fade-in-animation(0.8s);
+
   display: inline-block;
   margin-top: 2.5rem;
   margin-bottom: 1rem;

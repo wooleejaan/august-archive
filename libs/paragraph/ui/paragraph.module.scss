@@ -1,4 +1,6 @@
 .paragraph {
+  @include fade-in-animation(0.8s);
+
   height: fit-content;
   margin-block-start: 1em;
   margin-block-end: 1em;

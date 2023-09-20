@@ -27,8 +27,8 @@ export default function ListMainSection({
 }: ListMainSectionProps) {
   return (
     <ol className={cx('sectionContainer')}>
-      {section.map(({ slug, title, subTitle, createdDate }) => (
-        <li key={slug}>
+      {section.map(({ slug, title, subTitle, createdDate }, index) => (
+        <li key={slug} className={cx(`index${index}`)}>
           <UiSpacing size={32} />
           <Link
             href={`/${sectionType}/${slug}`}

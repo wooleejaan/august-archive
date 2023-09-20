@@ -1,3 +1,7 @@
+.linkContainer {
+  @include fade-in-animation(0.5s);
+}
+
 .link {
   position: relative;
   color: $august-dark-grey !important;
