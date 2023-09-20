@@ -1,4 +1,5 @@
 /* stylelint-disable property-no-vendor-prefix */
+/* stylelint-disable */
 
 * {
   box-sizing: border-box;
@@ -190,4 +191,139 @@ input,
 textarea,
 button {
   font-family: inherit;
+}
+
+.notion-color-green {
+  color: #0f7b6c;
+}
+.notion-color-green_background {
+  background-color: rgba(15, 123, 108, 0.3);
+  color: $august-background;
+}
+.notion-color-yellow {
+  color: #dfab01;
+}
+.notion-color-yellow_background {
+  background-color: rgba(223, 171, 1, 0.3);
+  color: $august-background;
+}
+.notion-color-brown {
+  color: #64473a;
+}
+.notion-color-brown_background {
+  background-color: rgba(100, 71, 58, 0.3);
+  color: $august-background;
+}
+.notion-color-blue {
+  color: #0b6e99;
+}
+.notion-color-blue_background {
+  background-color: rgba(11, 110, 153, 0.3);
+  color: $august-background;
+}
+.notion-color-pink {
+  color: #ad1a72;
+}
+.notion-color-pink_background {
+  background-color: rgba(173, 26, 114, 0.3);
+  color: $august-background;
+}
+.notion-color-red {
+  color: #e03e3e;
+}
+.notion-color-red_background {
+  background-color: rgba(224, 62, 62, 0.3);
+  color: $august-background;
+}
+
+.notion-color-purple {
+  color: #6940a5;
+}
+
+.notion-color-default {
+  color: $august-black;
+}
+
+.notion-color-purple_background {
+  background-color: rgba(105, 64, 165, 0.3);
+  color: $august-background;
+}
+
+.notion-heading_1 {
+  padding: 0.5rem 0;
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.notion-heading_2 {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.notion-heading_3 {
+  padding: 0.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+p {
+  color: $august-black;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+
+  code.notion-text-code {
+    margin: 0.15rem;
+    display: inline-block;
+
+    & span {
+      background-color: $august-light-grey;
+    }
+  }
+
+  & > span {
+    height: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    margin: 0.15rem;
+  }
+}
+
+.notion-image {
+  width: calc(16 * 24px);
+  height: calc(9 * 24px);
+  margin: 2rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  filter: drop-shadow(1px 1px 2px $august-black);
+
+  & img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.notion-code {
+  background-color: $august-black;
+  padding: 2rem;
+  border-radius: 1rem;
+  filter: drop-shadow(1px 1px 2px $august-black);
+
+  pre {
+    overflow: auto;
+    -ms-overflow-style: none; /*IE, Edge*/
+    scrollbar-width: none; /*Firefox*/
+    &::-webkit-scrollbar {
+      display: none; /*Chrome, Safari, Opera*/
+      width: 0px;
+    }
+
+    code {
+      color: $august-background;
+    }
+  }
 }

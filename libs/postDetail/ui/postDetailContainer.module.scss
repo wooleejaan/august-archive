@@ -1,0 +1,37 @@
+.detailWrapper {
+  width: 100%;
+  max-width: calc(1920px - 126rem);
+  margin: 0 auto;
+  padding: 12.8rem 0;
+
+  @include tablet {
+    width: calc(100% - 6rem);
+  }
+
+  .subTitle {
+    color: $august-dark-grey;
+    font-size: 14px;
+  }
+
+  .infoContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+
+    .created {
+      display: flex;
+      align-items: center;
+      color: $august-light-grey;
+      font-size: 12px;
+      text-align: center;
+
+      &:hover {
+        color: $august-dark-grey;
+      }
+    }
+  }
+
+  .detailContainer {
+    position: relative;
+  }
+}

@@ -1,4 +1,3 @@
-// import 'highlight.js/styles/github-dark.css'
 import { getPages } from '@/libs/shared/helpers/notion.helpers'
 import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
 
