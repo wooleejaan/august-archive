@@ -27,7 +27,7 @@
 @mixin fade-in-animation($time: 1.2s) {
   @keyframes fade-in-bottom {
     from {
-      transform: translate3d(0, -5px, 0);
+      transform: translate3d(0, 0, 0);
       opacity: 0;
     }
 
