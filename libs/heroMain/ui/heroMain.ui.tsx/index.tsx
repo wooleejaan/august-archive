@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind'
 
-import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiParagraph from '@/libs/paragraph/ui/paragraph.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 
@@ -10,11 +9,11 @@ import styles from './heroMain.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default function UiHeroMain({ children }: HeroMainProps) {
+export default function UiHeroMain({ children, location }: HeroMainProps) {
   return (
     <article className={cx('heroWrapper')}>
       <section className={cx('bioContainer')}>
-        <CurrentLocation />
+        {location}
         <UiSpacing size={15} />
         <UiParagraph>
           새로운 깨달음을 얻는 순간에 가장 큰 기쁨을 느끼며, 기술적으로 문제를

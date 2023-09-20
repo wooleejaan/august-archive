@@ -4,6 +4,7 @@ import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
 import HeroMain from '@/libs/heroMain/feature/heroMain.feature'
 import HeroMainArchives from '@/libs/heroMain/feature/heroMainArchives.feature'
 import HeroMainProjects from '@/libs/heroMain/feature/heroMainProjects.feature'
+import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
 export default async function HomePage() {
   const [archives, projects] = await Promise.all([
@@ -30,7 +31,7 @@ export default async function HomePage() {
   }
 
   return (
-    <HeroMain>
+    <HeroMain location={<CurrentLocation />}>
       <HeroMainProjects section={projectList} />
       <HeroMainArchives section={archiveList} />
     </HeroMain>

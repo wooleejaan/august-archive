@@ -13,6 +13,7 @@ import {
 } from '@/libs/shared/helpers/notion.helpers'
 import { PartialDetailPageObjectResponseMore } from '@/libs/shared/types/page.type'
 
+import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
 
 export default async function ArchiveDetailPage({
@@ -44,5 +45,11 @@ export default async function ArchiveDetailPage({
   notionRenderer.use(bookmarkPlugin(undefined))
   const html = await notionRenderer.render(...content)
 
-  return <UiPostDetailContainer content={html} {...archiveInfo} />
+  return (
+    <UiPostDetailContainer
+      content={html}
+      location={<CurrentLocation />}
+      {...archiveInfo}
+    />
+  )
 }

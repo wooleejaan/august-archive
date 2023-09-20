@@ -1,5 +1,6 @@
 interface HeroMainProps {
   children: React.ReactNode
+  location: React.ReactElement
 }
 
 interface SectionProps {
