@@ -12,6 +12,8 @@
     margin-bottom: 3.2rem;
 
     .contacts {
+      @include fade-in-animation(1.2s);
+
       display: flex;
       gap: 0.8rem;
 
@@ -45,6 +47,8 @@
   }
 
   .previewContainer {
+    @include fade-in-animation(1.5s);
+
     display: flex;
     flex-direction: column;
   }

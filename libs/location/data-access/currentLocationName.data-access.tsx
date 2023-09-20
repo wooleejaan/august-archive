@@ -10,7 +10,7 @@ const cx = classNames.bind(styles)
 const currentLocationName = (pathname: string) => {
   if (pathname === '/') {
     return (
-      <div>
+      <div className={cx('linkContainer')}>
         <Link href="/" className={cx('link')}>
           august
         </Link>
@@ -19,7 +19,7 @@ const currentLocationName = (pathname: string) => {
   }
   if (pathname === '/archives') {
     return (
-      <div>
+      <div className={cx('linkContainer')}>
         <Link href="/" className={cx('link')}>
           august
         </Link>
@@ -32,7 +32,7 @@ const currentLocationName = (pathname: string) => {
   }
   if (pathname === '/projects') {
     return (
-      <div>
+      <div className={cx('linkContainer')}>
         <Link href="/" className={cx('link')}>
           august
         </Link>
@@ -46,7 +46,7 @@ const currentLocationName = (pathname: string) => {
   if (pathname.includes('/projects/')) {
     const locationName = pathname.replace('/projects/', '').replaceAll('-', ' ')
     return (
-      <div>
+      <div className={cx('linkContainer')}>
         <Link href="/" className={cx('link')}>
           august
         </Link>
@@ -64,7 +64,7 @@ const currentLocationName = (pathname: string) => {
   if (pathname.includes('/archives/')) {
     const locationName = pathname.replace('/archives/', '').replaceAll('-', ' ')
     return (
-      <div>
+      <div className={cx('linkContainer')}>
         <Link href="/" className={cx('link')}>
           august
         </Link>

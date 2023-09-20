@@ -9,6 +9,8 @@
   }
 
   .subTitle {
+    @include fade-in-animation(1.2s);
+
     color: $august-dark-grey;
     font-size: 14px;
   }
@@ -17,6 +19,8 @@
     display: flex;
     justify-content: space-between;
     padding-top: 2rem;
+
+    @include fade-in-animation(1.5s);
 
     .created {
       display: flex;
@@ -33,5 +37,7 @@
 
   .detailContainer {
     position: relative;
+
+    @include fade-in-animation(1.8s);
   }
 }
