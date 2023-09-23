@@ -16,7 +16,9 @@
       font-weight: 400;
       letter-spacing: -0.003rem;
       line-height: 1.7;
-      word-break: keep-all;
+
+      // word-break: keep-all;
+      white-space: normal;
       overflow-wrap: break-word;
 
       @include mobile {
@@ -38,7 +40,9 @@
       font-weight: 400;
       letter-spacing: -0.003rem;
       line-height: 1.7;
-      word-break: keep-all;
+
+      // word-break: keep-all;
+      white-space: normal;
       overflow-wrap: break-word;
     }
 

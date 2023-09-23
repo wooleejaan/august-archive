@@ -269,10 +269,11 @@ button {
 
 p {
   color: $august-black;
-  height: 2.4rem;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+
+  height: fit-content;
+  min-height: 2.4rem;
+
+  // word-wrap: break-word;
 
   code.notion-text-code {
     display: inline-block;
@@ -292,7 +293,7 @@ p {
   & > span {
     height: 1.8rem;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     margin: 0.15rem;
   }
