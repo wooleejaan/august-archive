@@ -30,7 +30,21 @@ interface PartialDetailPageObjectResponseMore {
   }
 }
 
+interface PagesHelperResponse {
+  object: 'list'
+  results: PartialPageObjectResponseMore[]
+}
+
+interface PageDetailHelperResponse {
+  object: 'page'
+  id: string
+  created_time: string
+  properties: PartialDetailPageObjectResponseMore
+}
+
 export type {
   PartialPageObjectResponseMore,
   PartialDetailPageObjectResponseMore,
+  PagesHelperResponse,
+  PageDetailHelperResponse,
 }

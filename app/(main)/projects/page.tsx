@@ -1,7 +1,10 @@
 import { notFound } from 'next/navigation'
 
-import { getPages } from '@/libs/shared/helpers/notion.helpers'
-import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
+import { getPagesHelper } from '@/libs/shared/helpers/getNotion.helper'
+import {
+  PagesHelperResponse,
+  PartialPageObjectResponseMore,
+} from '@/libs/shared/types/page.type'
 
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
@@ -12,7 +15,11 @@ export default async function ProjectsPage({
 }: {
   searchParams: { [key: string]: string }
 }) {
-  const projects = await getPages('project', 10, searchParams.cursor)
+  const projects = await getPagesHelper<PagesHelperResponse>(
+    'project',
+    10,
+    searchParams.cursor,
+  )
   if (!projects) notFound()
 
   // const nextCursor = projects.next_cursor
