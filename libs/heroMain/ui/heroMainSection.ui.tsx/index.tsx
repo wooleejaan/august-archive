@@ -25,7 +25,7 @@ export default function UiHeroMainSection({
         {section.map(({ slug, title }) => (
           <li key={title}>
             <Link href={`/${sectionType}/${slug}`} shallow={true}>
-              <span className={cx('list')}>{title}</span>
+              <p className={cx('list')}>{title}</p>
             </Link>
           </li>
         ))}
