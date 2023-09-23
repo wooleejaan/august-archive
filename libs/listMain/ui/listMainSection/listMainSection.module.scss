@@ -8,6 +8,7 @@
   .section {
     .title {
       position: relative;
+      height: 100%;
       margin-block-start: 0.25em;
       margin-block-end: 0.125em;
       color: $august-black;
@@ -17,6 +18,10 @@
       line-height: 1.7;
       word-break: keep-all;
       overflow-wrap: break-word;
+
+      @include mobile {
+        word-break: initial;
+      }
 
       &:hover {
         transition: 0.3s;
