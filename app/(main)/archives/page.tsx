@@ -1,7 +1,10 @@
 import { notFound } from 'next/navigation'
 
-import { getPages } from '@/libs/shared/helpers/notion.helpers'
-import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
+import { getPagesHelper } from '@/libs/shared/helpers/getNotion.helper'
+import {
+  PagesHelperResponse,
+  PartialPageObjectResponseMore,
+} from '@/libs/shared/types/page.type'
 
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
@@ -12,7 +15,11 @@ export default async function ArchivesPage({
 }: {
   searchParams: { [key: string]: string }
 }) {
-  const archives = await getPages('archive', 10, searchParams.cursor)
+  const archives = await getPagesHelper<PagesHelperResponse>(
+    'archive',
+    10,
+    searchParams.cursor,
+  )
   if (!archives) notFound()
 
   // const nextCursor = archives.next_cursor

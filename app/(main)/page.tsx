@@ -1,16 +1,27 @@
-import { getPages } from '@/libs/shared/helpers/notion.helpers'
-import { PartialPageObjectResponseMore } from '@/libs/shared/types/page.type'
+import { notFound } from 'next/navigation'
+
+import { getPagesHelper } from '@/libs/shared/helpers/getNotion.helper'
+import {
+  PagesHelperResponse,
+  PartialPageObjectResponseMore,
+} from '@/libs/shared/types/page.type'
 
 import HeroMain from '@/libs/heroMain/feature/heroMain.feature'
 import HeroMainArchives from '@/libs/heroMain/feature/heroMainArchives.feature'
 import HeroMainProjects from '@/libs/heroMain/feature/heroMainProjects.feature'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
-export default async function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string }
+}) {
   const [archives, projects] = await Promise.all([
-    getPages('archive'),
-    getPages('project'),
+    getPagesHelper<PagesHelperResponse>('archive', 3, searchParams.cursor),
+    getPagesHelper<PagesHelperResponse>('project', 3, searchParams.cursor),
   ])
+
+  if (!archives || !projects) notFound()
 
   const projectList: Array<{ slug: string; title: string }> = []
   const archiveList: Array<{ slug: string; title: string }> = []

@@ -1,5 +1,3 @@
-import { cache } from 'react'
-
 import { Client } from '@notionhq/client'
 import {
   BlockObjectResponse,
@@ -10,38 +8,39 @@ export const notionClient = new Client({
   auth: process.env.NEXT_PUBLIC_NOTION_TOKEN,
 })
 
-export const getPages = cache(
-  (containProperty: string, pageSize = 3, startCursor?: string) =>
-    notionClient.databases.query({
-      filter: {
-        and: [
-          {
-            property: 'Status',
-            multi_select: {
-              contains: 'published',
-            },
+export const getPages = (
+  containProperty: string,
+  pageSize = 3,
+  startCursor?: string,
+) =>
+  notionClient.databases.query({
+    filter: {
+      and: [
+        {
+          property: 'Status',
+          multi_select: {
+            contains: 'published',
           },
-          {
-            property: 'Status',
-            multi_select: {
-              contains: containProperty,
-            },
+        },
+        {
+          property: 'Status',
+          multi_select: {
+            contains: containProperty,
           },
-        ],
-      },
-      database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string,
-      page_size: pageSize,
-      start_cursor: startCursor,
-    }),
-)
+        },
+      ],
+    },
+    database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string,
+    page_size: pageSize,
+    start_cursor: startCursor,
+  })
 
-export const getPageContent = cache((pageId: string) =>
+export const getPageContent = (pageId: string) =>
   notionClient.blocks.children
     .list({ block_id: pageId })
-    .then((res) => res.results as BlockObjectResponse[]),
-)
+    .then((res) => res.results as BlockObjectResponse[])
 
-export const getPageBySlug = cache((slug: string, containProperty: string) =>
+export const getPageBySlug = (slug: string, containProperty: string) =>
   notionClient.databases
     .query({
       database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string,
@@ -62,5 +61,4 @@ export const getPageBySlug = cache((slug: string, containProperty: string) =>
         ],
       },
     })
-    .then((res) => res.results[0] as PageObjectResponse | undefined),
-)
+    .then((res) => res.results[0] as PageObjectResponse | undefined)
