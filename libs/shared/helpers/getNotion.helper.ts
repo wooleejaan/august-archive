@@ -1,15 +1,13 @@
 const getPagesHelper = async <T>(
   containProperty: string,
-  pageSize = 3,
+  pageSize: number,
   startCursor?: string,
 ): Promise<T> => {
   const res = await fetch(
-    startCursor
-      ? `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/list?property=${containProperty}&pageSize=${pageSize}&startCursor=${startCursor}`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/list?property=${containProperty}&pageSize=${pageSize}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/list?property=${containProperty}&pageSize=${pageSize}&startCursor=${startCursor}`,
     {
-      cache: 'no-store',
-      //   cache: 'force-cache',
+      // cache: 'no-store',
+      cache: 'force-cache',
     },
   )
 
@@ -21,6 +19,7 @@ const getPagesHelper = async <T>(
   const data = res.json()
   return data
 }
+
 const getPageBySlugHelper = async <T>(
   slug: string,
   containProperty: string,
@@ -28,8 +27,8 @@ const getPageBySlugHelper = async <T>(
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/listBySlug?property=${containProperty}&slug=${slug}`,
     {
-      cache: 'no-store',
-      //   cache: 'force-cache',
+      // cache: 'no-store',
+      cache: 'force-cache',
     },
   )
 
@@ -45,8 +44,8 @@ const getPageContentHelper = async <T>(pageId: string): Promise<T> => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/content?detailId=${pageId}`,
     {
-      cache: 'no-store',
-      //   cache: 'force-cache',
+      // cache: 'no-store',
+      cache: 'force-cache',
     },
   )
 

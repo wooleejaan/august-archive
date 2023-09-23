@@ -31,7 +31,7 @@ export const getPages = (
       ],
     },
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string,
-    page_size: Number(pageSize),
+    page_size: pageSize,
     start_cursor: startCursor,
   })
 

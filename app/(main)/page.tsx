@@ -11,10 +11,14 @@ import HeroMainArchives from '@/libs/heroMain/feature/heroMainArchives.feature'
 import HeroMainProjects from '@/libs/heroMain/feature/heroMainProjects.feature'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
-export default async function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string }
+}) {
   const [archives, projects] = await Promise.all([
-    getPagesHelper<PagesHelperResponse>('archive'),
-    getPagesHelper<PagesHelperResponse>('project'),
+    getPagesHelper<PagesHelperResponse>('archive', 3, searchParams.cursor),
+    getPagesHelper<PagesHelperResponse>('project', 3, searchParams.cursor),
   ])
 
   if (!archives || !projects) notFound()
