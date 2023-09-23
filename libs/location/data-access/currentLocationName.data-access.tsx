@@ -70,7 +70,7 @@ const currentLocationName = (pathname: string) => {
         </Link>
         <UiSlashPadding />
         <Link href="/archives" className={cx('link')}>
-          projects
+          archives
         </Link>
         <UiSlashPadding />
         <Link href={pathname} className={cx('link')}>
