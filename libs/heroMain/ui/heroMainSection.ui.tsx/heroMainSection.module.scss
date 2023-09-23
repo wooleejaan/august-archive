@@ -10,25 +10,6 @@
     word-break: keep-all;
     overflow-wrap: break-word;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1.5px;
-      transition: 0.3s;
-      background-color: $august-dark-grey;
-
-      @include mobile {
-        background-color: $august-background;
-      }
-    }
-
-    &:hover::after {
-      width: 100%;
-    }
-
     &:hover {
       transition: 0.3s;
       color: $august-dark-grey;
