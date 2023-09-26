@@ -24,7 +24,11 @@ export default function UiHeroMainSection({
       <ol className={cx('previewContainer')}>
         {section.map(({ slug, title }) => (
           <li key={title}>
-            <Link href={`/${sectionType}/${slug}`} shallow={true}>
+            <Link
+              href={`/${sectionType}/${slug}`}
+              prefetch={true}
+              shallow={true}
+            >
               <p className={cx('list')}>{title}</p>
             </Link>
           </li>
