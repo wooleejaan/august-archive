@@ -35,8 +35,26 @@ export default async function ArchiveDetailPage({
   const polishedProps =
     archive.properties as unknown as PartialDetailPageObjectResponseMore
 
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+
+  const date = new Date(archive.created_time)
   const archiveInfo = {
-    createdTime: new Date(archive.created_time).toLocaleDateString(),
+    createdTime: `${
+      months[date.getMonth()]
+    } ${date.getDate()}, ${date.getFullYear()}`,
     subTitle: polishedProps?.SubTitle.rich_text[0].plain_text,
     category: polishedProps?.Category.multi_select.map((tag) => tag.name),
     slug: polishedProps?.Slug.rich_text[0].plain_text,
