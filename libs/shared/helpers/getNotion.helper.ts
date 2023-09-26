@@ -18,8 +18,8 @@ const getPagesHelper = cache(
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/list?property=${containProperty}&pageSize=${pageSize}&startCursor=${startCursor}`,
       {
-        cache: 'no-store',
-        // cache: 'force-cache',
+        // cache: 'no-store',
+        cache: 'force-cache',
         // next: { revalidate: 86400 },
       },
     )
@@ -48,8 +48,8 @@ const getPageBySlugHelper = cache(
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/listBySlug?property=${containProperty}&slug=${slug}`,
       {
-        cache: 'no-store',
-        // cache: 'force-cache',
+        // cache: 'no-store',
+        cache: 'force-cache',
         // next: { revalidate: 86400 },
       },
     )
@@ -77,8 +77,8 @@ const getPageContentHelper = cache(async <T>(pageId: string): Promise<T> => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion/content?detailId=${pageId}`,
     {
-      cache: 'no-store',
-      // cache: 'force-cache',
+      // cache: 'no-store',
+      cache: 'force-cache',
       // next: { revalidate: 86400 },
     },
   )

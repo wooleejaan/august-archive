@@ -32,6 +32,7 @@ export default function ListMainSection({
           <UiSpacing size={32} />
           <Link
             href={`/${sectionType}/${slug}`}
+            prefetch={true}
             shallow={true}
             key={slug}
             className={cx('section')}
