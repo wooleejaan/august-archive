@@ -306,7 +306,7 @@ p {
   margin: 2rem auto;
   border-radius: 1rem;
   overflow: hidden;
-  filter: drop-shadow(1px 1px 2px $august-black);
+  // filter: drop-shadow(1px 1px 2px $august-black);
 
   @include mobile {
     width: 100%;
@@ -324,7 +324,7 @@ p {
   background-color: #444;
   padding: 2rem;
   border-radius: 1rem;
-  filter: drop-shadow(1px 1px 2px $august-black);
+  // filter: drop-shadow(1px 1px 2px $august-black);
 
   pre {
     overflow: auto;

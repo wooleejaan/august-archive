@@ -11,6 +11,7 @@ import {
   getPageBySlugHelper,
   getPageContentHelper,
 } from '@/libs/shared/helpers/getNotion.helper'
+import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
 import { notionClient } from '@/libs/shared/helpers/notion.helpers'
 import {
   BlockObjectMoreResponse,
@@ -36,7 +37,7 @@ export default async function ProjectDetailPage({
     project.properties as unknown as PartialDetailPageObjectResponseMore
 
   const projectInfo = {
-    createdTime: new Date(project.created_time).toLocaleDateString(),
+    createdTime: dateConverter(project.created_time),
     subTitle: polishedProps?.SubTitle.rich_text[0].plain_text,
     category: polishedProps?.Category.multi_select.map((tag) => tag.name),
     slug: polishedProps?.Slug.rich_text[0].plain_text,
