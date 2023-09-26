@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 
 import { getPagesHelper } from '@/libs/shared/helpers/getNotion.helper'
+import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
 import {
   PagesHelperResponse,
   PartialPageObjectResponseMore,
@@ -36,7 +37,7 @@ export default async function ArchivesPage({
       slug: archive.properties?.Slug.rich_text[0].plain_text as string,
       title: archive.properties?.Title.title[0].plain_text as string,
       subTitle: archive.properties?.SubTitle.rich_text[0].plain_text as string,
-      createdDate: new Date(archive.created_time).toLocaleDateString(),
+      createdDate: dateConverter(archive.created_time),
     })
   }
 
