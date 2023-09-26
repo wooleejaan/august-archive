@@ -13,6 +13,7 @@ import {
 } from '@/libs/shared/helpers/getNotion.helper'
 import { notionClient } from '@/libs/shared/helpers/notion.helpers'
 import {
+  BlockObjectMoreResponse,
   PageDetailHelperResponse,
   PartialDetailPageObjectResponseMore,
 } from '@/libs/shared/types/page.type'
@@ -42,7 +43,22 @@ export default async function ArchiveDetailPage({
     title: polishedProps?.Title.title[0].plain_text,
   }
 
-  const content = await getPageContentHelper<BlockObjectResponse[]>(archive.id)
+  const content = await getPageContentHelper<
+    Array<BlockObjectResponse & BlockObjectMoreResponse>
+  >(archive.id)
+
+  const updatedContent = await Promise.all(
+    content.map(async (c) => {
+      if (c.type === 'image') {
+        const response = await fetch(c.image.file.url)
+        const imgBuffer = await response.arrayBuffer()
+        const base64Image = Buffer.from(imgBuffer).toString('base64')
+        // eslint-disable-next-line no-param-reassign
+        c.image.file.url = `data:image/png;base64,${base64Image}`
+      }
+      return c
+    }),
+  )
 
   const notionRenderer = new NotionRenderer({
     client: notionClient,
@@ -50,7 +66,7 @@ export default async function ArchiveDetailPage({
 
   notionRenderer.use(hljsPlugin({}))
   notionRenderer.use(bookmarkPlugin(undefined))
-  const html = await notionRenderer.render(...content)
+  const html = await notionRenderer.render(...updatedContent)
 
   return (
     <UiPostDetailContainer
