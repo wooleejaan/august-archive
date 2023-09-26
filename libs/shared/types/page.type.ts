@@ -42,9 +42,21 @@ interface PageDetailHelperResponse {
   properties: PartialDetailPageObjectResponseMore
 }
 
+interface BlockObjectMoreResponse {
+  image: {
+    caption: []
+    type: string
+    file: {
+      url: string
+      expiry_time: string
+    }
+  }
+}
+
 export type {
   PartialPageObjectResponseMore,
   PartialDetailPageObjectResponseMore,
   PagesHelperResponse,
   PageDetailHelperResponse,
+  BlockObjectMoreResponse,
 }
