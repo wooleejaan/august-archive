@@ -13,23 +13,13 @@ import {
 } from '@/libs/shared/helpers/getNotion.helper'
 import { notionClient } from '@/libs/shared/helpers/notion.helpers'
 import {
+  BlockObjectMoreResponse,
   PageDetailHelperResponse,
   PartialDetailPageObjectResponseMore,
 } from '@/libs/shared/types/page.type'
 
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
-
-interface BlockObjectMoreResponse {
-  image: {
-    caption: []
-    type: string
-    file: {
-      url: string
-      expiry_time: string
-    }
-  }
-}
 
 export default async function ProjectDetailPage({
   params,
