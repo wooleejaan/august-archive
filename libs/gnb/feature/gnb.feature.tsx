@@ -15,13 +15,16 @@ export default function Gnb({ title }: GnbProps) {
   const { visible, position } = useGnbView()
 
   return (
-    <nav
-      className={cx('wrapper', {
-        isView: !visible,
-        isTop: position === 0,
-      })}
-    >
-      <p className={cx('title')}>{title}</p>
+    <nav>
+      <div className={cx('blurLayer')} aria-hidden="true" />
+      <div
+        className={cx('wrapper', {
+          isView: !visible,
+          isTop: position === 0,
+        })}
+      >
+        <p className={cx('title')}>{title}</p>
+      </div>
     </nav>
   )
 }
