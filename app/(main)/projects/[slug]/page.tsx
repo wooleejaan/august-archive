@@ -20,6 +20,17 @@ import {
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
 
+interface BlockObjectMoreResponse {
+  image: {
+    caption: []
+    type: string
+    file: {
+      url: string
+      expiry_time: string
+    }
+  }
+}
+
 export default async function ProjectDetailPage({
   params,
 }: {
@@ -42,7 +53,22 @@ export default async function ProjectDetailPage({
     title: polishedProps?.Title.title[0].plain_text,
   }
 
-  const content = await getPageContentHelper<BlockObjectResponse[]>(project.id)
+  const content = await getPageContentHelper<
+    Array<BlockObjectResponse & BlockObjectMoreResponse>
+  >(project.id)
+
+  const updatedContent = await Promise.all(
+    content.map(async (c) => {
+      if (c.type === 'image') {
+        const response = await fetch(c.image.file.url)
+        const imgBuffer = await response.arrayBuffer()
+        const base64Image = Buffer.from(imgBuffer).toString('base64')
+        // eslint-disable-next-line no-param-reassign
+        c.image.file.url = `data:image/png;base64,${base64Image}`
+      }
+      return c
+    }),
+  )
 
   const notionRenderer = new NotionRenderer({
     client: notionClient,
@@ -50,7 +76,7 @@ export default async function ProjectDetailPage({
 
   notionRenderer.use(hljsPlugin({}))
   notionRenderer.use(bookmarkPlugin(undefined))
-  const html = await notionRenderer.render(...content)
+  const html = await notionRenderer.render(...updatedContent)
 
   return (
     <UiPostDetailContainer
