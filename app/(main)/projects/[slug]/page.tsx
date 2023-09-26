@@ -5,6 +5,7 @@ import hljsPlugin from '@notion-render/hljs-plugin'
 import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import 'highlight.js/styles/github-dark.css'
 
+import dynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
 
 import {
@@ -21,6 +22,10 @@ import {
 
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
+
+const Gnb = dynamic(() => import('@/libs/gnb/feature/gnb.feature'), {
+  ssr: false,
+})
 
 export default async function ProjectDetailPage({
   params,
@@ -70,10 +75,13 @@ export default async function ProjectDetailPage({
   const html = await notionRenderer.render(...updatedContent)
 
   return (
-    <UiPostDetailContainer
-      content={html}
-      location={<CurrentLocation />}
-      {...projectInfo}
-    />
+    <main>
+      <Gnb title={projectInfo.title} />
+      <UiPostDetailContainer
+        content={html}
+        location={<CurrentLocation />}
+        {...projectInfo}
+      />
+    </main>
   )
 }
