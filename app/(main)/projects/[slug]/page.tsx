@@ -35,8 +35,26 @@ export default async function ProjectDetailPage({
   const polishedProps =
     project.properties as unknown as PartialDetailPageObjectResponseMore
 
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+
+  const date = new Date(project.created_time)
   const projectInfo = {
-    createdTime: new Date(project.created_time).toLocaleDateString(),
+    createdTime: `${
+      months[date.getMonth()]
+    } ${date.getDate()}, ${date.getFullYear()}`,
     subTitle: polishedProps?.SubTitle.rich_text[0].plain_text,
     category: polishedProps?.Category.multi_select.map((tag) => tag.name),
     slug: polishedProps?.Slug.rich_text[0].plain_text,
