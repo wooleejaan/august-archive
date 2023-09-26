@@ -2,7 +2,6 @@ import classNames from 'classnames/bind'
 
 import ChipContainer from '@/libs/chip/chipContainer.feature'
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
-import Heading3 from '@/libs/heading3/ui/heading3.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 
 import styles from './postDetailContainer.module.scss'
@@ -31,22 +30,24 @@ export default function UiPostDetailContainer({
     <article className={cx('detailWrapper')}>
       <section>
         {location}
-        <Heading3 id={title} color="#666">
-          {title[0].toUpperCase() + title.slice(1)}
-        </Heading3>
+
+        <h3 className={cx('title')}>{title}</h3>
         <p className={cx('subTitle')}>{subTitle}</p>
         <div className={cx('infoContainer')}>
-          <ChipContainer chipList={category} />
           <span className={cx('created')}>{createdTime}</span>
         </div>
         <UiSpacing size={12} />
-        <UiDividing lineColor="#d1d1d1" />
+        <UiDividing lineColor="#d1d1d180" />
         <UiSpacing size={24} />
       </section>
       <section
         className={cx('detailContainer')}
         dangerouslySetInnerHTML={{ __html: content }}
       />
+      <UiSpacing size={48} />
+      <UiDividing lineColor="#d1d1d180" />
+      <UiSpacing size={16} />
+      <ChipContainer chipList={category} />
     </article>
   )
 }
