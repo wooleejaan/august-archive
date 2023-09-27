@@ -18,11 +18,11 @@ const META_ROOT: Metadata = {
 }
 
 const META_PROJECTS = {
-  title: 'projects | august',
+  title: 'projects | august archives',
 }
 
 const META_ARCHIVES = {
-  title: 'archives | august',
+  title: 'archives | august archives',
 }
 
 interface GenerateParamsMetadataProps {
@@ -44,7 +44,7 @@ const generateParamsMetadata = async function generateMetadata({
   )
 
   return {
-    title: `${page.properties?.Title.title[0].plain_text}`,
+    title: `${page.properties?.Title.title[0].plain_text} | august archives`,
   }
 }
 
@@ -57,7 +57,7 @@ const generateParamsTagsMetadata = async function generateMetadata({
 }: GenerateParamsTagsMetadataProps): Promise<Metadata> {
   const { tag } = params
   return {
-    title: `${tag.replace('-', ' ')} | august`,
+    title: `${tag.replace('-', ' ')} | august archives`,
   }
 }
 
