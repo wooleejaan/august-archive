@@ -12,7 +12,7 @@
   background-color: transparent;
 
   @include tablet {
-    width: calc(100% - 6rem);
+    width: 100%;
   }
 
   .blurContainer {
