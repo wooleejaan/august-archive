@@ -1,3 +1,5 @@
+import { META_ARCHIVES } from '@/app/_meta'
+
 import { notFound } from 'next/navigation'
 
 import { getPagesHelper } from '@/libs/_shared/apis/getNotion.api'
@@ -10,6 +12,8 @@ import { ListPageProps } from '@/libs/_shared/types/routers.type'
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
+
+export const metadata = META_ARCHIVES
 
 export default async function ArchivesPage({ searchParams }: ListPageProps) {
   const archives = await getPagesHelper<PagesHelperResponse>(
@@ -40,8 +44,10 @@ export default async function ArchivesPage({ searchParams }: ListPageProps) {
   }
 
   return (
-    <UiListMain listTitle="archives" location={<CurrentLocation />}>
-      <ListMainSection section={archiveList} />
-    </UiListMain>
+    <main>
+      <UiListMain listTitle="archives" location={<CurrentLocation />}>
+        <ListMainSection section={archiveList} />
+      </UiListMain>
+    </main>
   )
 }

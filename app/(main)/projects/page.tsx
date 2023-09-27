@@ -1,3 +1,5 @@
+import { META_PROJECTS } from '@/app/_meta'
+
 import { notFound } from 'next/navigation'
 
 import { getPagesHelper } from '@/libs/_shared/apis/getNotion.api'
@@ -10,6 +12,8 @@ import { ListPageProps } from '@/libs/_shared/types/routers.type'
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
+
+export const metadata = META_PROJECTS
 
 export default async function ProjectsPage({ searchParams }: ListPageProps) {
   const projects = await getPagesHelper<PagesHelperResponse>(
@@ -40,8 +44,10 @@ export default async function ProjectsPage({ searchParams }: ListPageProps) {
   }
 
   return (
-    <UiListMain listTitle="projects" location={<CurrentLocation />}>
-      <ListMainSection section={projectList} />
-    </UiListMain>
+    <main>
+      <UiListMain listTitle="projects" location={<CurrentLocation />}>
+        <ListMainSection section={projectList} />
+      </UiListMain>
+    </main>
   )
 }

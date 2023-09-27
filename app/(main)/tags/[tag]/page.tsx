@@ -1,3 +1,5 @@
+import { generateParamsTagsMetadata } from '@/app/_meta'
+
 import { notFound } from 'next/navigation'
 
 import { getTagListPagesHelper } from '@/libs/_shared/apis/getNotion.api'
@@ -10,6 +12,8 @@ import { TagPageProps } from '@/libs/_shared/types/routers.type'
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
+
+export const generateMetadata = generateParamsTagsMetadata
 
 export default async function TagPage({ params, searchParams }: TagPageProps) {
   const tags = await getTagListPagesHelper<PagesHelperResponse>(
@@ -38,11 +42,13 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
   }
 
   return (
-    <UiListMain
-      listTitle={`${params.tag[0].toUpperCase() + params.tag.slice(1)}`}
-      location={<CurrentLocation />}
-    >
-      <ListMainSection section={tagList} />
-    </UiListMain>
+    <main>
+      <UiListMain
+        listTitle={`${params.tag[0].toUpperCase() + params.tag.slice(1)}`}
+        location={<CurrentLocation />}
+      >
+        <ListMainSection section={tagList} />
+      </UiListMain>
+    </main>
   )
 }
