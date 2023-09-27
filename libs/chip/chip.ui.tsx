@@ -1,7 +1,8 @@
 import classNames from 'classnames/bind'
 
+import { ChipProps } from '@/libs/_shared/types/components.type'
+
 import styles from './chip.module.scss'
-import { ChipProps } from './shared/types/chip.type'
 
 const cx = classNames.bind(styles)
 

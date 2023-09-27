@@ -2,7 +2,7 @@
 const nextConfig = {
   sassOptions: {
     prependData:
-      '@use "libs/shared/styles/_utils.scss" as *; @use "libs/shared/styles/_mixin.scss" as *;',
+      '@use "libs/_shared/styles/_utils.scss" as *; @use "libs/_shared/styles/_mixin.scss" as *;',
   },
 }
 

@@ -4,11 +4,11 @@ import axios, {
   InternalAxiosRequestConfig,
 } from 'axios'
 
-import { logOnDev } from '../../helpers/logOnDev.helpers'
+import { logOnDev } from '../../helpers/logOnDev.helper'
 import { CustomAxiosInterface } from '../../types/instance.type'
 
-export const githubRawInstance: CustomAxiosInterface = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_RAWS_BASE_URL}`,
+export const githubApiInstance: CustomAxiosInterface = axios.create({
+  baseURL: `${process.env.NEXT_PUBLIC_REPOS_BASE_URL}`,
   headers: {
     Accept: 'application/vnd.github+json',
     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
@@ -19,7 +19,7 @@ export const githubRawInstance: CustomAxiosInterface = axios.create({
 })
 
 /* request interceptors */
-githubRawInstance.interceptors.request.use(
+githubApiInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     /**
      * request 직전 공통으로 진행할 작업
@@ -43,7 +43,7 @@ githubRawInstance.interceptors.request.use(
 )
 
 /* response interceptors */
-githubRawInstance.interceptors.response.use(
+githubApiInstance.interceptors.response.use(
   (response: AxiosResponse): AxiosResponse => {
     /**
      * http status가 20X이고, http response가 then으로 넘어가기 직전 호출

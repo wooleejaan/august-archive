@@ -11,15 +11,15 @@ import { notFound } from 'next/navigation'
 import {
   getPageBySlugHelper,
   getPageContentHelper,
-} from '@/libs/shared/helpers/getNotion.helper'
-import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
-import { notionClient } from '@/libs/shared/helpers/notion.helpers'
+} from '@/libs/_shared/apis/getNotion.api'
+import dateConverter from '@/libs/_shared/helpers/monthConverter.helper'
+import { notionClient } from '@/libs/_shared/helpers/notion.helper'
 import {
   BlockObjectMoreResponse,
   PageDetailHelperResponse,
   PartialDetailPageObjectResponseMore,
-} from '@/libs/shared/types/page.type'
-
+} from '@/libs/_shared/types/responses.type'
+import { DetailPageProps } from '@/libs/_shared/types/routers.type'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
 
@@ -27,11 +27,7 @@ const Gnb = dynamic(() => import('@/libs/gnb/feature/gnb.feature'), {
   ssr: false,
 })
 
-export default async function ProjectDetailPage({
-  params,
-}: {
-  params: { slug: string }
-}) {
+export default async function ProjectDetailPage({ params }: DetailPageProps) {
   const project = await getPageBySlugHelper<PageDetailHelperResponse>(
     params.slug,
     'project',

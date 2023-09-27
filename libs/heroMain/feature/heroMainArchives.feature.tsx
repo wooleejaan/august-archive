@@ -1,6 +1,6 @@
+import { HeroMainSectionProps } from '@/libs/_shared/types/components.type.js'
 import UiDots from '@/libs/dots/ui/dots.ui'
 
-import { HeroMainSectionProps } from '../shared/types/heroMain.type'
 import UiHeroMainSection from '../ui/heroMainSection.ui.tsx'
 
 export default function HeroMainArchives({ section }: HeroMainSectionProps) {

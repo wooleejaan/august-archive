@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind'
 
-import { ParagraphProps } from '../shared/types/paragraph.type'
+import { UiParagraphProps } from '@/libs/_shared/types/components.type'
+
 import styles from './paragraph.module.scss'
 
 const cx = classNames.bind(styles)
@@ -11,7 +12,7 @@ export default function UiParagraph({
   fontWeight,
   fontSize,
   ...props
-}: ParagraphProps) {
+}: UiParagraphProps) {
   return (
     <p
       className={cx('paragraph')}

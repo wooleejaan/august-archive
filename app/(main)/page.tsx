@@ -1,21 +1,17 @@
 import { notFound } from 'next/navigation'
 
-import { getPagesHelper } from '@/libs/shared/helpers/getNotion.helper'
+import { getPagesHelper } from '@/libs/_shared/apis/getNotion.api'
 import {
   PagesHelperResponse,
   PartialPageObjectResponseMore,
-} from '@/libs/shared/types/page.type'
-
+} from '@/libs/_shared/types/responses.type'
+import { HomePageProps } from '@/libs/_shared/types/routers.type'
 import HeroMain from '@/libs/heroMain/feature/heroMain.feature'
 import HeroMainArchives from '@/libs/heroMain/feature/heroMainArchives.feature'
 import HeroMainProjects from '@/libs/heroMain/feature/heroMainProjects.feature'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string }
-}) {
+export default async function HomePage({ searchParams }: HomePageProps) {
   const [archives, projects] = await Promise.all([
     getPagesHelper<PagesHelperResponse>('archive', 3, searchParams.cursor),
     getPagesHelper<PagesHelperResponse>('project', 3, searchParams.cursor),

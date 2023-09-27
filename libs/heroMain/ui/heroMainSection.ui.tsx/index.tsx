@@ -2,12 +2,12 @@ import classNames from 'classnames/bind'
 
 import Link from 'next/link'
 
-import Heading3 from '@/libs/heading3/ui/heading3.ui'
-
 import {
   HeroMainSectionProps,
   SectionTypeProps,
-} from '../../shared/types/heroMain.type'
+} from '@/libs/_shared/types/components.type'
+import Heading3 from '@/libs/heading3/ui/heading3.ui'
+
 import styles from './heroMainSection.module.scss'
 
 const cx = classNames.bind(styles)
