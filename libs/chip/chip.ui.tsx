@@ -12,7 +12,7 @@ export default function UiChip({ chipName, ...props }: ChipProps) {
   return (
     <span className={cx('chip')} {...props}>
       <Link href={`/tags/${chipName}`} prefetch={true} shallow={true}>
-        {chipName}
+        {chipName.replaceAll('-', ' ')}
       </Link>
     </span>
   )

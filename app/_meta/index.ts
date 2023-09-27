@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
+
+import { getPageBySlugHelper } from '@/libs/_shared/apis/getNotion.api'
+import { PageDetailHelperResponse } from '@/libs/_shared/types/responses.type'
 
 const META_ROOT: Metadata = {
   icons: {
     icon: '/images/favicon.ico',
   },
   title: {
-    template: '%s | august',
+    template: '%s',
     default: 'august archives',
   },
   description:
@@ -14,11 +18,11 @@ const META_ROOT: Metadata = {
 }
 
 const META_PROJECTS = {
-  title: 'projects',
+  title: 'projects | august',
 }
 
 const META_ARCHIVES = {
-  title: 'archives',
+  title: 'archives | august',
 }
 
 interface GenerateParamsMetadataProps {
@@ -28,9 +32,19 @@ interface GenerateParamsMetadataProps {
 const generateParamsMetadata = async function generateMetadata({
   params,
 }: GenerateParamsMetadataProps): Promise<Metadata> {
+  const headersList = headers()
+  const headerUrl = headersList.get('x-url') || ''
+  const containProperty = headerUrl.split('/')[1].slice(0, -1)
+
   const { slug } = params
+
+  const page = await getPageBySlugHelper<PageDetailHelperResponse>(
+    slug,
+    containProperty,
+  )
+
   return {
-    title: `${slug.replace('-', ' ')}`,
+    title: `${page.properties?.Title.title[0].plain_text}`,
   }
 }
 
@@ -43,7 +57,7 @@ const generateParamsTagsMetadata = async function generateMetadata({
 }: GenerateParamsTagsMetadataProps): Promise<Metadata> {
   const { tag } = params
   return {
-    title: `${tag.replace('-', ' ')}`,
+    title: `${tag.replace('-', ' ')} | august`,
   }
 }
 
