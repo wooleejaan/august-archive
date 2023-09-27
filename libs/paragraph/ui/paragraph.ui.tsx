@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 
-import { UiParagraphProps } from '@/libs/shared/types/components.type'
+import { UiParagraphProps } from '@/libs/_shared/types/components.type'
 
 import styles from './paragraph.module.scss'
 

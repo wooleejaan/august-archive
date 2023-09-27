@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 
-import { UiHeading3Props } from '@/libs/shared/types/components.type'
+import { UiHeading3Props } from '@/libs/_shared/types/components.type'
 
 import styles from './heading3.module.scss'
 

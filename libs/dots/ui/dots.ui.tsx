@@ -2,7 +2,7 @@ import classNames from 'classnames/bind'
 
 import Link from 'next/link'
 
-import { UiDotsProps } from '@/libs/shared/types/components.type'
+import { UiDotsProps } from '@/libs/_shared/types/components.type'
 
 import styles from './dots.module.scss'
 

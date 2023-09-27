@@ -4,7 +4,7 @@ import React from 'react'
 
 import { RecoilRoot } from 'recoil'
 
-import { RecoilRootProviderProps } from '@/libs/shared/types/context.type'
+import { RecoilRootProviderProps } from '@/libs/_shared/types/context.type'
 
 export default function RecoilRootProvider({
   children,

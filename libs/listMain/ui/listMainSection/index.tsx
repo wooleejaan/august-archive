@@ -2,8 +2,7 @@ import classNames from 'classnames/bind'
 
 import Link from 'next/link'
 
-import { ListMainSectionProps } from '@/libs/shared/types/components.type'
-
+import { ListMainSectionProps } from '@/libs/_shared/types/components.type'
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 

@@ -1,5 +1,4 @@
-import { HeroMainSectionProps } from '@/libs/shared/types/components.type.js'
-
+import { HeroMainSectionProps } from '@/libs/_shared/types/components.type.js'
 import UiDots from '@/libs/dots/ui/dots.ui'
 
 import UiHeroMainSection from '../ui/heroMainSection.ui.tsx'

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-import { throttleHelper } from '@/libs/shared/helpers/throttle.helper'
+import { throttleHelper } from '@/libs/_shared/helpers/throttle.helper'
 
 const useGnbView = () => {
   const [position, setPosition] = useState<number>(0)

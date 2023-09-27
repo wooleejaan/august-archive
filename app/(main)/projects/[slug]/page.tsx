@@ -11,16 +11,15 @@ import { notFound } from 'next/navigation'
 import {
   getPageBySlugHelper,
   getPageContentHelper,
-} from '@/libs/shared/apis/getNotion.api'
-import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
-import { notionClient } from '@/libs/shared/helpers/notion.helper'
+} from '@/libs/_shared/apis/getNotion.api'
+import dateConverter from '@/libs/_shared/helpers/monthConverter.helper'
+import { notionClient } from '@/libs/_shared/helpers/notion.helper'
 import {
   BlockObjectMoreResponse,
   PageDetailHelperResponse,
   PartialDetailPageObjectResponseMore,
-} from '@/libs/shared/types/responses.type'
-import { DetailPageProps } from '@/libs/shared/types/routers.type'
-
+} from '@/libs/_shared/types/responses.type'
+import { DetailPageProps } from '@/libs/_shared/types/routers.type'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
 

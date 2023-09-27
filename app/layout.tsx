@@ -1,7 +1,6 @@
-import RecoilRootProvider from '@/libs/shared/context/recoil.context'
-import '@/libs/shared/styles/global.scss'
-import { RootLayoutProps } from '@/libs/shared/types/routers.type'
-
+import RecoilRootProvider from '@/libs/_shared/context/recoil.context'
+import '@/libs/_shared/styles/global.scss'
+import { RootLayoutProps } from '@/libs/_shared/types/routers.type'
 import UiFooter from '@/libs/footer/ui/footer.ui'
 
 import { PureunJeonnam } from '@/public/fonts/localfonts'

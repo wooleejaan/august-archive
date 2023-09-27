@@ -1,4 +1,4 @@
-import { HeroMainProps } from '@/libs/shared/types/components.type.js'
+import { HeroMainProps } from '@/libs/_shared/types/components.type.js'
 
 import UiHeroMain from '../ui/heroMain.ui.tsx'
 

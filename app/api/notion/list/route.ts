@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import { getPages } from '@/libs/shared/helpers/notion.helper'
+import { getPages } from '@/libs/_shared/helpers/notion.helper'
 
 export async function GET(req: NextRequest) {
   const property = req.nextUrl.searchParams.get('property') || ''

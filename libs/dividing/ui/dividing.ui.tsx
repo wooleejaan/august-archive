@@ -1,4 +1,4 @@
-import { UiDividingProps } from '@/libs/shared/types/components.type'
+import { UiDividingProps } from '@/libs/_shared/types/components.type'
 
 export default function UiDividing({
   lineWeight = 1,

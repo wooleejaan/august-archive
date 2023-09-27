@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind'
 
-import { UiPostDetailContainerProps } from '@/libs/shared/types/components.type'
-
+import { UiPostDetailContainerProps } from '@/libs/_shared/types/components.type'
 import ChipContainer from '@/libs/chip/chipContainer.feature'
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'

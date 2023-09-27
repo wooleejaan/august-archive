@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 
-import { ChipContainerProps } from '@/libs/shared/types/components.type'
+import { ChipContainerProps } from '@/libs/_shared/types/components.type'
 
 import styles from './chip.module.scss'
 import UiChip from './chip.ui'

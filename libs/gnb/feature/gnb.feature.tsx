@@ -2,7 +2,7 @@
 
 import classNames from 'classnames/bind'
 
-import { GnbProps } from '@/libs/shared/types/components.type'
+import { GnbProps } from '@/libs/_shared/types/components.type'
 
 import useGnbView from '../data-access/gnb.data-access'
 import styles from '../ui/gnb.module.scss'

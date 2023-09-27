@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind'
 
-import { UiListMainProps } from '@/libs/shared/types/components.type'
-
+import { UiListMainProps } from '@/libs/_shared/types/components.type'
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import Heading3 from '@/libs/heading3/ui/heading3.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'

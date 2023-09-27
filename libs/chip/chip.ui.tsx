@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 
-import { ChipProps } from '@/libs/shared/types/components.type'
+import { ChipProps } from '@/libs/_shared/types/components.type'
 
 import styles from './chip.module.scss'
 

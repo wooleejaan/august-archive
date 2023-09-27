@@ -5,8 +5,7 @@ import Link from 'next/link'
 import {
   HeroMainSectionProps,
   SectionTypeProps,
-} from '@/libs/shared/types/components.type'
-
+} from '@/libs/_shared/types/components.type'
 import Heading3 from '@/libs/heading3/ui/heading3.ui'
 
 import styles from './heroMainSection.module.scss'

@@ -1,13 +1,12 @@
 import { notFound } from 'next/navigation'
 
-import { getPagesHelper } from '@/libs/shared/apis/getNotion.api'
-import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
+import { getPagesHelper } from '@/libs/_shared/apis/getNotion.api'
+import dateConverter from '@/libs/_shared/helpers/monthConverter.helper'
 import {
   PagesHelperResponse,
   PartialPageObjectResponseMore,
-} from '@/libs/shared/types/responses.type'
-import { ListPageProps } from '@/libs/shared/types/routers.type'
-
+} from '@/libs/_shared/types/responses.type'
+import { ListPageProps } from '@/libs/_shared/types/routers.type'
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
