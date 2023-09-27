@@ -1,3 +1,4 @@
+import { generateParamsMetadata } from '@/app/_meta'
 import bookmarkPlugin from '@notion-render/bookmark-plugin'
 import { NotionRenderer } from '@notion-render/client'
 // Plugins
@@ -26,6 +27,8 @@ import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
 const Gnb = dynamic(() => import('@/libs/gnb/feature/gnb.feature'), {
   ssr: false,
 })
+
+export const generateMetadata = generateParamsMetadata
 
 export default async function ProjectDetailPage({ params }: DetailPageProps) {
   const project = await getPageBySlugHelper<PageDetailHelperResponse>(

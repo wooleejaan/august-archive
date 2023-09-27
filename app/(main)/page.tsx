@@ -46,9 +46,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   }
 
   return (
-    <HeroMain location={<CurrentLocation />} tags={tagList}>
-      <HeroMainProjects section={projectList} />
-      <HeroMainArchives section={archiveList} />
-    </HeroMain>
+    <main>
+      <HeroMain location={<CurrentLocation />} tags={tagList}>
+        <HeroMainProjects section={projectList} />
+        <HeroMainArchives section={archiveList} />
+      </HeroMain>
+    </main>
   )
 }
