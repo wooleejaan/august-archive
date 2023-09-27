@@ -16,7 +16,9 @@ export default function Tags({ tags }: TagsProps) {
       <ul className={cx('wrapper')}>
         {tags.map((tag) => (
           <li className={cx('tag')} key={tag}>
-            <Link href={`/tags/${tag}`}>{tag}</Link>
+            <Link href={`/tags/${tag}`} prefetch={true} shallow={true}>
+              {tag}
+            </Link>
           </li>
         ))}
       </ul>

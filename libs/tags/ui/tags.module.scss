@@ -58,6 +58,7 @@
       cursor: pointer;
 
       &:hover {
+        transition: background-color 0.3s ease;
         background-color: $august-black;
         color: $august-background;
       }
