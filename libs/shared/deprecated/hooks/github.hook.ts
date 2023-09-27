@@ -7,9 +7,9 @@ import rehypeSlug from 'rehype-slug'
 
 import { Post } from '@/libs/post/feature/post.feature-shell'
 
-import { PostName, PostTypes } from '../../types/posts.type'
 import { getRequestGithubApi } from '../apis/githubApi/githubApiCommon.api'
 import { getRequestGithubRaw } from '../apis/githubRaw/githubRawCommon.api'
+import { PostName, PostTypes } from '../types/posts.type'
 
 /**
  *

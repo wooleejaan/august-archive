@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios'
 
-import { CommonResponse } from '../../../types/instance.type'
+import { CommonResponse } from '../../types/instance.type'
 import { githubRawInstance } from './githubRawInstance.api'
 
 /* get 요청 */
