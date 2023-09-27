@@ -31,6 +31,7 @@ interface UiHeading3Props extends HTMLAttributes<HTMLHeadingElement> {
 interface HeroMainProps {
   children: React.ReactNode
   location: React.ReactElement
+  tags: string[]
 }
 
 interface SectionProps {
@@ -81,6 +82,10 @@ interface UiPostDetailContainerProps {
   location: React.ReactElement
 }
 
+interface TagsProps {
+  tags: string[]
+}
+
 export type {
   ChipContainerProps,
   ChipProps,
@@ -95,4 +100,5 @@ export type {
   ListMainSectionProps,
   UiParagraphProps,
   UiPostDetailContainerProps,
+  TagsProps,
 }

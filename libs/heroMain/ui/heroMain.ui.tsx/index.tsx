@@ -3,13 +3,18 @@ import classNames from 'classnames/bind'
 import { HeroMainProps } from '@/libs/_shared/types/components.type'
 import UiParagraph from '@/libs/paragraph/ui/paragraph.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
+import Tags from '@/libs/tags/feature/tags.feature'
 
 import UiContacts from './contacts.ui'
 import styles from './heroMain.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default function UiHeroMain({ children, location }: HeroMainProps) {
+export default function UiHeroMain({
+  children,
+  location,
+  tags,
+}: HeroMainProps) {
   return (
     <article className={cx('heroWrapper')}>
       <section className={cx('bioContainer')}>
@@ -23,6 +28,8 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           front-end developer
         </UiParagraph>
         <UiContacts />
+        <UiSpacing size={15} />
+        <Tags tags={tags} />
       </section>
       <article className={cx('previewContainer')}>{children}</article>
     </article>

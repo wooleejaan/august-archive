@@ -1,9 +1,13 @@
 import { notFound } from 'next/navigation'
 
-import { getPagesHelper } from '@/libs/_shared/apis/getNotion.api'
+import {
+  getPagesHelper,
+  getTagListHelper,
+} from '@/libs/_shared/apis/getNotion.api'
 import {
   PagesHelperResponse,
   PartialPageObjectResponseMore,
+  TagListHelperResponse,
 } from '@/libs/_shared/types/responses.type'
 import { HomePageProps } from '@/libs/_shared/types/routers.type'
 import HeroMain from '@/libs/heroMain/feature/heroMain.feature'
@@ -12,15 +16,19 @@ import HeroMainProjects from '@/libs/heroMain/feature/heroMainProjects.feature'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
 export default async function HomePage({ searchParams }: HomePageProps) {
-  const [archives, projects] = await Promise.all([
+  const [archives, projects, tags] = await Promise.all([
     getPagesHelper<PagesHelperResponse>('archive', 3, searchParams.cursor),
     getPagesHelper<PagesHelperResponse>('project', 3, searchParams.cursor),
+    await getTagListHelper<TagListHelperResponse>(),
   ])
 
-  if (!archives || !projects) notFound()
+  if (!archives || !projects || !tags) notFound()
 
   const projectList: Array<{ slug: string; title: string }> = []
   const archiveList: Array<{ slug: string; title: string }> = []
+  const tagList = tags.results[0].properties.Category.multi_select.map(
+    (tag) => tag.name,
+  )
 
   // eslint-disable-next-line no-restricted-syntax
   for (const page of projects.results as PartialPageObjectResponseMore[]) {
@@ -38,7 +46,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   }
 
   return (
-    <HeroMain location={<CurrentLocation />}>
+    <HeroMain location={<CurrentLocation />} tags={tagList}>
       <HeroMainProjects section={projectList} />
       <HeroMainArchives section={archiveList} />
     </HeroMain>
