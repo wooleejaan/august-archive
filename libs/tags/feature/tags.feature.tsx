@@ -17,7 +17,7 @@ export default function Tags({ tags }: TagsProps) {
         {tags.map((tag) => (
           <li className={cx('tag')} key={tag}>
             <Link href={`/tags/${tag}`} prefetch={true} shallow={true}>
-              {tag}
+              {tag.replaceAll('-', ' ')}
             </Link>
           </li>
         ))}

@@ -41,10 +41,12 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
     })
   }
 
+  const listTitle = params.tag.replaceAll('-', ' ')
+
   return (
     <main>
       <UiListMain
-        listTitle={`${params.tag[0].toUpperCase() + params.tag.slice(1)}`}
+        listTitle={`${listTitle[0].toUpperCase() + listTitle.slice(1)}`}
         location={<CurrentLocation />}
       >
         <ListMainSection section={tagList} />
