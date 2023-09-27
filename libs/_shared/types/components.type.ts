@@ -16,7 +16,7 @@ interface UiDividingProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface UiDotsProps {
-  sectionType: 'archives' | 'projects'
+  sectionType: string
 }
 
 interface GnbProps {
@@ -31,6 +31,7 @@ interface UiHeading3Props extends HTMLAttributes<HTMLHeadingElement> {
 interface HeroMainProps {
   children: React.ReactNode
   location: React.ReactElement
+  tags: string[]
 }
 
 interface SectionProps {
@@ -39,7 +40,7 @@ interface SectionProps {
 }
 
 interface SectionTypeProps {
-  sectionType: 'projects' | 'archives'
+  sectionType: string
 }
 
 interface HeroMainSectionProps {
@@ -48,7 +49,7 @@ interface HeroMainSectionProps {
 
 interface UiListMainProps {
   children: React.ReactNode
-  listTitle: 'projects' | 'archives'
+  listTitle: string
   location: React.ReactElement
 }
 
@@ -57,11 +58,11 @@ interface ListSectionProps {
   title: string
   subTitle: string
   createdDate: string
+  sectionType: string
 }
 
 interface ListMainSectionProps {
   section: ListSectionProps[]
-  sectionType: 'projects' | 'archives'
 }
 
 interface UiParagraphProps extends HTMLAttributes<HTMLSpanElement> {
@@ -81,6 +82,10 @@ interface UiPostDetailContainerProps {
   location: React.ReactElement
 }
 
+interface TagsProps {
+  tags: string[]
+}
+
 export type {
   ChipContainerProps,
   ChipProps,
@@ -95,4 +100,5 @@ export type {
   ListMainSectionProps,
   UiParagraphProps,
   UiPostDetailContainerProps,
+  TagsProps,
 }

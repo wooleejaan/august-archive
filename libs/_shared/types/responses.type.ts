@@ -15,6 +15,9 @@ interface PartialPageObjectResponseMore {
     Category: {
       multi_select: Array<{ name: string }>
     }
+    Status: {
+      multi_select: Array<{ name: string }>
+    }
   }
 }
 

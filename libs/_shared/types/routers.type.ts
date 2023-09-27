@@ -14,4 +14,15 @@ interface DetailPageProps {
   params: { slug: string }
 }
 
-export type { RootLayoutProps, HomePageProps, ListPageProps, DetailPageProps }
+interface TagPageProps {
+  params: { tag: string }
+  searchParams: { [key: string]: string }
+}
+
+export type {
+  RootLayoutProps,
+  HomePageProps,
+  ListPageProps,
+  DetailPageProps,
+  TagPageProps,
+}

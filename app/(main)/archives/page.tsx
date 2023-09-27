@@ -25,6 +25,7 @@ export default async function ArchivesPage({ searchParams }: ListPageProps) {
     title: string
     subTitle: string
     createdDate: string
+    sectionType: string
   }> = []
 
   // eslint-disable-next-line no-restricted-syntax
@@ -34,12 +35,13 @@ export default async function ArchivesPage({ searchParams }: ListPageProps) {
       title: archive.properties?.Title.title[0].plain_text as string,
       subTitle: archive.properties?.SubTitle.rich_text[0].plain_text as string,
       createdDate: dateConverter(archive.created_time),
+      sectionType: archive.properties?.Status.multi_select[1].name as string,
     })
   }
 
   return (
     <UiListMain listTitle="archives" location={<CurrentLocation />}>
-      <ListMainSection section={archiveList} sectionType="archives" />
+      <ListMainSection section={archiveList} />
     </UiListMain>
   )
 }

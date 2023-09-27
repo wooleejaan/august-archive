@@ -6,21 +6,23 @@
 .chip {
   display: inline-block;
   margin-right: 0.875rem;
-  margin-bottom: 0.125rem;
-  padding: 0.4rem 1.2rem;
-  border: 1px solid $august-dark-grey;
-  border-radius: 1rem;
-  background-color: transparent;
-  color: $august-dark-grey;
-  font-size: 14px;
+  margin-bottom: 0.875rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid $august-light-grey;
+  border-radius: 10px;
+  background-color: $august-light-grey-50;
+  color: $august-black;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: -0.003rem;
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
 
   &:hover {
     transition: background-color 0.3s ease;
-    background-color: $august-dark-grey;
+    background-color: $august-black;
     color: $august-background;
   }
 }
