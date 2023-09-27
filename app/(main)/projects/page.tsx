@@ -25,6 +25,7 @@ export default async function ProjectsPage({ searchParams }: ListPageProps) {
     title: string
     subTitle: string
     createdDate: string
+    sectionType: string
   }> = []
 
   // eslint-disable-next-line no-restricted-syntax
@@ -34,12 +35,13 @@ export default async function ProjectsPage({ searchParams }: ListPageProps) {
       title: page.properties?.Title.title[0].plain_text as string,
       subTitle: page.properties?.SubTitle.rich_text[0].plain_text as string,
       createdDate: dateConverter(page.created_time),
+      sectionType: page.properties?.Status.multi_select[1].name as string,
     })
   }
 
   return (
     <UiListMain listTitle="projects" location={<CurrentLocation />}>
-      <ListMainSection section={projectList} sectionType="projects" />
+      <ListMainSection section={projectList} />
     </UiListMain>
   )
 }

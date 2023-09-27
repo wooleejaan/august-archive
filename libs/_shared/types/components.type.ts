@@ -16,7 +16,7 @@ interface UiDividingProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface UiDotsProps {
-  sectionType: 'archives' | 'projects'
+  sectionType: string
 }
 
 interface GnbProps {
@@ -40,7 +40,7 @@ interface SectionProps {
 }
 
 interface SectionTypeProps {
-  sectionType: 'projects' | 'archives'
+  sectionType: string
 }
 
 interface HeroMainSectionProps {
@@ -49,7 +49,7 @@ interface HeroMainSectionProps {
 
 interface UiListMainProps {
   children: React.ReactNode
-  listTitle: 'projects' | 'archives'
+  listTitle: string
   location: React.ReactElement
 }
 
@@ -58,11 +58,11 @@ interface ListSectionProps {
   title: string
   subTitle: string
   createdDate: string
+  sectionType: string
 }
 
 interface ListMainSectionProps {
   section: ListSectionProps[]
-  sectionType: 'projects' | 'archives'
 }
 
 interface UiParagraphProps extends HTMLAttributes<HTMLSpanElement> {
