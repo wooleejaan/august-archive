@@ -109,6 +109,26 @@ const currentLocationName = (pathname: string) => {
       </div>
     )
   }
+
+  if (pathname.includes('/tags/')) {
+    const locationName = pathname.replace('/tags/', '').replaceAll('-', ' ')
+    return (
+      <div className={cx('linkContainer')}>
+        <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
+          august
+        </Link>
+        <UiSlashPadding />
+        <Link
+          href={pathname}
+          className={cx('link')}
+          prefetch={true}
+          shallow={true}
+        >
+          {locationName}
+        </Link>
+      </div>
+    )
+  }
 }
 
 export { currentLocationName }
