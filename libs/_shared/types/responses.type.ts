@@ -12,6 +12,9 @@ interface PartialPageObjectResponseMore {
     SubTitle: {
       rich_text: Array<{ plain_text: string }>
     }
+    Category: {
+      multi_select: Array<{ name: string }>
+    }
   }
 }
 
@@ -28,6 +31,19 @@ interface PartialDetailPageObjectResponseMore {
   Category: {
     multi_select: Array<{ name: string }>
   }
+}
+
+interface PartialTagListObjectResponseMore {
+  properties: {
+    Category: {
+      multi_select: Array<{ name: string }>
+    }
+  }
+}
+
+interface TagListHelperResponse {
+  object: 'list'
+  results: PartialTagListObjectResponseMore[]
 }
 
 interface PagesHelperResponse {
@@ -56,6 +72,7 @@ interface BlockObjectMoreResponse {
 export type {
   PartialPageObjectResponseMore,
   PartialDetailPageObjectResponseMore,
+  TagListHelperResponse,
   PagesHelperResponse,
   PageDetailHelperResponse,
   BlockObjectMoreResponse,
