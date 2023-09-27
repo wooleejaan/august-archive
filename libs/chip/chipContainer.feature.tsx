@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind'
 
+import { ChipContainerProps } from '@/libs/shared/types/components.type'
+
 import styles from './chip.module.scss'
 import UiChip from './chip.ui'
-import { ChipContainerProps } from './shared/types/chip.type'
 
 const cx = classNames.bind(styles)
 

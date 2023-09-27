@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind'
 
+import { UiPostDetailContainerProps } from '@/libs/shared/types/components.type'
+
 import ChipContainer from '@/libs/chip/chipContainer.feature'
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
@@ -7,16 +9,6 @@ import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 import styles from './postDetailContainer.module.scss'
 
 const cx = classNames.bind(styles)
-
-interface UiPostDetailContainerProps {
-  content: string
-  createdTime: string
-  subTitle: string
-  category: string[]
-  slug: string
-  title: string
-  location: React.ReactElement
-}
 
 export default function UiPostDetailContainer({
   content,

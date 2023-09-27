@@ -1,9 +1,10 @@
 import classNames from 'classnames/bind'
 
+import { HeroMainProps } from '@/libs/shared/types/components.type'
+
 import UiParagraph from '@/libs/paragraph/ui/paragraph.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 
-import { HeroMainProps } from '../../shared/types/heroMain.type'
 import UiContacts from './contacts.ui'
 import styles from './heroMain.module.scss'
 

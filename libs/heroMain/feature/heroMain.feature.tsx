@@ -1,4 +1,5 @@
-import { HeroMainProps } from '../shared/types/heroMain.type'
+import { HeroMainProps } from '@/libs/shared/types/components.type.js'
+
 import UiHeroMain from '../ui/heroMain.ui.tsx'
 
 export default function HeroMain({ children, location }: HeroMainProps) {

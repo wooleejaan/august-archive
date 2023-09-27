@@ -2,24 +2,14 @@ import classNames from 'classnames/bind'
 
 import Link from 'next/link'
 
+import { ListMainSectionProps } from '@/libs/shared/types/components.type'
+
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 
 import styles from './listMainSection.module.scss'
 
 const cx = classNames.bind(styles)
-
-interface SectionProps {
-  slug: string
-  title: string
-  subTitle: string
-  createdDate: string
-}
-
-interface ListMainSectionProps {
-  section: SectionProps[]
-  sectionType: 'projects' | 'archives'
-}
 
 export default function ListMainSection({
   section,

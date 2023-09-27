@@ -5,7 +5,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 
-import { Post } from '@/libs/post/feature/post.feature-shell'
+import { Post } from '@/libs/shared/_deprecated/components/post/feature/post.feature-shell'
 
 import { getRequestGithubApi } from '../apis/githubApi/githubApiCommon.api'
 import { getRequestGithubRaw } from '../apis/githubRaw/githubRawCommon.api'

@@ -1,11 +1,4 @@
-import { HTMLAttributes } from 'react'
-
-interface UiDividingProps extends HTMLAttributes<HTMLDivElement> {
-  children?: never
-  lineWeight?: number
-  lineColor: string
-  lineOpacity?: number
-}
+import { UiDividingProps } from '@/libs/shared/types/components.type'
 
 export default function UiDividing({
   lineWeight = 1,

@@ -18,7 +18,8 @@ import {
   BlockObjectMoreResponse,
   PageDetailHelperResponse,
   PartialDetailPageObjectResponseMore,
-} from '@/libs/shared/types/page.type'
+} from '@/libs/shared/types/responses.type'
+import { DetailPageProps } from '@/libs/shared/types/routers.type'
 
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
@@ -27,11 +28,7 @@ const Gnb = dynamic(() => import('@/libs/gnb/feature/gnb.feature'), {
   ssr: false,
 })
 
-export default async function ArchiveDetailPage({
-  params,
-}: {
-  params: { slug: string }
-}) {
+export default async function ArchiveDetailPage({ params }: DetailPageProps) {
   const archive = await getPageBySlugHelper<PageDetailHelperResponse>(
     params.slug,
     'archive',

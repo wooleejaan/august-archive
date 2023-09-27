@@ -5,17 +5,14 @@ import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
 import {
   PagesHelperResponse,
   PartialPageObjectResponseMore,
-} from '@/libs/shared/types/page.type'
+} from '@/libs/shared/types/responses.type'
+import { ListPageProps } from '@/libs/shared/types/routers.type'
 
 import UiListMain from '@/libs/listMain/ui/listMain'
 import ListMainSection from '@/libs/listMain/ui/listMainSection'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
-export default async function ProjectsPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string }
-}) {
+export default async function ProjectsPage({ searchParams }: ListPageProps) {
   const projects = await getPagesHelper<PagesHelperResponse>(
     'project',
     10,
