@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-import { getPagesHelper } from '@/libs/shared/helpers/getNotion.helper'
+import { getPagesHelper } from '@/libs/shared/apis/getNotion.api'
 import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
 import {
   PagesHelperResponse,

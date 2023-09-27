@@ -11,9 +11,9 @@ import { notFound } from 'next/navigation'
 import {
   getPageBySlugHelper,
   getPageContentHelper,
-} from '@/libs/shared/helpers/getNotion.helper'
+} from '@/libs/shared/apis/getNotion.api'
 import dateConverter from '@/libs/shared/helpers/monthConverter.helper'
-import { notionClient } from '@/libs/shared/helpers/notion.helpers'
+import { notionClient } from '@/libs/shared/helpers/notion.helper'
 import {
   BlockObjectMoreResponse,
   PageDetailHelperResponse,
