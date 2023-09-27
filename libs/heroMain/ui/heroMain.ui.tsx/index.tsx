@@ -20,9 +20,10 @@ export default function UiHeroMain({
       <section className={cx('bioContainer')}>
         {location}
         <UiSpacing size={15} />
+        <UiParagraph>안녕하세요, 이용우입니다.</UiParagraph>
         <UiParagraph>
-          새로운 깨달음을 얻는 순간에 가장 큰 기쁨을 느끼며, 기술적으로 문제를
-          해결할 때 보람을 느낍니다. 또한 배운 지식을 글로 정리하는 걸 즐깁니다.
+          새롭게 알게 된 것들, 직면하고 해결한 기술적인 문제들을 글로 정리하고
+          공유합니다. 정적이면서도 부드러운 시각물에 관심이 많습니다.
         </UiParagraph>
         <UiParagraph color="#d1d1d1" fontWeight={300} fontSize={13.5}>
           front-end developer
