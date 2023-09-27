@@ -2,7 +2,7 @@ import { cache } from 'react'
 
 /**
  *
- * @description ISR 적용된 API Handler
+ * @description SSG 적용된 API Handler
  * @example
  * ```bash
  * # how to revalidate
@@ -27,7 +27,7 @@ const getTagListHelper = cache(async <T>(): Promise<T> => {
 
 /**
  *
- * @description ISR 적용된 API Handler
+ * @description SSG 적용된 API Handler
  * @example
  * ```bash
  * # how to revalidate
@@ -55,7 +55,7 @@ const getTagListPagesHelper = cache(
 
 /**
  *
- * @description ISR 적용된 API Handler
+ * @description SSG 적용된 API Handler
  * @example
  * ```bash
  * # how to revalidate
@@ -89,7 +89,7 @@ const getPagesHelper = cache(
 
 /**
  *
- * @description ISR 적용된 API Handler
+ * @description SSG 적용된 API Handler
  * @example
  * ```bash
  * # how to revalidate
@@ -119,7 +119,7 @@ const getPageBySlugHelper = cache(
 
 /**
  *
- * @description ISR 적용된 API Handler
+ * @description SSG 적용된 API Handler
  * @example
  * ```bash
  * # how to revalidate
@@ -149,7 +149,7 @@ const getPageBySlugAndCategoryHelper = cache(
 
 /**
  *
- * @description ISR 적용된 API Handler
+ * @description SSG 적용된 API Handler
  * @example
  * ```bash
  * # how to revalidate
