@@ -15,7 +15,7 @@ import {
 } from '@/libs/_shared/apis/getNotion.api'
 import dateConverter from '@/libs/_shared/helpers/monthConverter.helper'
 import { notionClient } from '@/libs/_shared/helpers/notion.helper'
-import convertToGithubImage from '@/libs/_shared/hooks/convertToGithubImage.hooks'
+import convertToGithubImage from '@/libs/_shared/hooks/convertToGithubImage.hook'
 import {
   BlockObjectMoreResponse,
   PageDetailHelperResponse,
