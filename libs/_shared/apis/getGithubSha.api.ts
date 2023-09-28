@@ -11,7 +11,7 @@ import { cache } from 'react'
  */
 const getGithubSha = cache(async <T>(): Promise<T> => {
   const currentFileResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_REPOS_BASE_URL}/contents/images`,
+    `${process.env.NEXT_PUBLIC_REPOS_BASE_URL}/contents/${process.env.NEXT_PUBLIC_IMAGE_PATH}`,
     {
       cache: 'force-cache',
       method: 'GET',
