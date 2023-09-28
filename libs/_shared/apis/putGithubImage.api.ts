@@ -17,7 +17,7 @@ const putGithubImage = cache(
     currentSha: string,
   ): Promise<T> => {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_REPOS_BASE_URL}/contents/images/${imgPath}/${imgName}.png`,
+      `${process.env.NEXT_PUBLIC_REPOS_BASE_URL}/contents/${process.env.NEXT_PUBLIC_IMAGE_PATH}/${imgPath}/${imgName}.png`,
       {
         cache: 'force-cache',
         method: 'PUT',
