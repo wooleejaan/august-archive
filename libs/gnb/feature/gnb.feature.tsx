@@ -18,7 +18,7 @@ export default function Gnb({ title }: GnbProps) {
       <div
         className={cx('wrapper', {
           isView: !visible,
-          isTop: position === 0,
+          isTop: position <= 400,
         })}
       >
         <p className={cx('title')}>{title}</p>
