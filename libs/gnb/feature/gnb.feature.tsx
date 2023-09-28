@@ -1,7 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
-
 import classNames from 'classnames/bind'
 
 import { GnbProps } from '@/libs/_shared/types/components.type'
@@ -13,10 +11,6 @@ const cx = classNames.bind(styles)
 
 export default function Gnb({ title }: GnbProps) {
   const { visible, position } = useGnbView()
-
-  useEffect(() => {
-    console.log(position)
-  }, [position])
 
   return (
     <nav>
