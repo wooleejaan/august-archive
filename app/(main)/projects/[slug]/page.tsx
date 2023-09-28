@@ -15,6 +15,7 @@ import {
 } from '@/libs/_shared/apis/getNotion.api'
 import dateConverter from '@/libs/_shared/helpers/monthConverter.helper'
 import { notionClient } from '@/libs/_shared/helpers/notion.helper'
+import convertToGithubImage from '@/libs/_shared/hooks/convertToGithubImage.hooks'
 import {
   BlockObjectMoreResponse,
   PageDetailHelperResponse,
@@ -53,13 +54,15 @@ export default async function ProjectDetailPage({ params }: DetailPageProps) {
   >(project.id)
 
   const updatedContent = await Promise.all(
-    content.map(async (c) => {
+    content.map(async (c, index) => {
       if (c.type === 'image') {
-        const response = await fetch(c.image.file.url)
-        const imgBuffer = await response.arrayBuffer()
-        const base64Image = Buffer.from(imgBuffer).toString('base64')
+        const customUrl = await convertToGithubImage(
+          projectInfo.slug,
+          index,
+          c.image.file.url,
+        )
         // eslint-disable-next-line no-param-reassign
-        c.image.file.url = `data:image/png;base64,${base64Image}`
+        c.image.file.url = customUrl
       }
       return c
     }),
