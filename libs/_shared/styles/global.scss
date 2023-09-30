@@ -26,7 +26,6 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    height: 30%;
     border-radius: 1rem;
     background: $august-dark-grey;
   }
@@ -254,9 +253,10 @@ button {
 
 .notion-heading_1 {
   position: relative;
-  padding: 1.5rem 0 1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   background-color: $august-light-grey-25;
   margin: 1.5rem 0;
+  word-break: break-all;
 
   font-size: 2.2rem;
   font-weight: 500;
@@ -276,7 +276,8 @@ button {
 .notion-heading_2 {
   margin: 1rem 0;
   background-color: $august-light-grey-25;
-  padding: 1rem 0 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  word-break: break-all;
 
   font-size: 2rem;
   font-weight: 500;
@@ -297,10 +298,11 @@ button {
 .notion-heading_3 {
   margin: 0.5rem 0;
   background-color: $august-light-grey-25;
-  padding: 0.5rem 0 0.5rem 1.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   font-size: 1.8rem;
   font-weight: 500;
   position: relative;
+  word-break: break-all;
 
   &::before {
     content: '';
