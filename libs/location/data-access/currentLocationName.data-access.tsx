@@ -35,52 +35,7 @@ const currentLocationName = (pathname: string) => {
       </div>
     )
   }
-  if (pathname === '/projects') {
-    return (
-      <div className={cx('linkContainer')}>
-        <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
-          august
-        </Link>
-        <UiSlashPadding />
-        <Link
-          href="/projects"
-          className={cx('link')}
-          prefetch={true}
-          shallow={true}
-        >
-          projects
-        </Link>
-      </div>
-    )
-  }
-  if (pathname.includes('/projects/')) {
-    const locationName = pathname.replace('/projects/', '').replaceAll('-', ' ')
-    return (
-      <div className={cx('linkContainer')}>
-        <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
-          august
-        </Link>
-        <UiSlashPadding />
-        <Link
-          href="/projects"
-          className={cx('link')}
-          prefetch={true}
-          shallow={true}
-        >
-          projects
-        </Link>
-        <UiSlashPadding />
-        <Link
-          href={pathname}
-          className={cx('link')}
-          prefetch={true}
-          shallow={true}
-        >
-          {locationName}
-        </Link>
-      </div>
-    )
-  }
+
   if (pathname.includes('/archives/')) {
     const locationName = pathname.replace('/archives/', '').replaceAll('-', ' ')
     return (

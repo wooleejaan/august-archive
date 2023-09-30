@@ -4,7 +4,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   max-width: calc(1920px - 106rem);
   height: var(--tags-h);

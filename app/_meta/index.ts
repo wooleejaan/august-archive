@@ -17,10 +17,6 @@ const META_ROOT: Metadata = {
   metadataBase: new URL('https://august-archive.vercel.app/'),
 }
 
-const META_PROJECTS = {
-  title: 'projects | august archives',
-}
-
 const META_ARCHIVES = {
   title: 'archives | august archives',
 }
@@ -63,7 +59,6 @@ const generateParamsTagsMetadata = async function generateMetadata({
 
 export {
   META_ROOT,
-  META_PROJECTS,
   META_ARCHIVES,
   generateParamsMetadata,
   generateParamsTagsMetadata,
