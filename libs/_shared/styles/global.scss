@@ -302,9 +302,33 @@ p {
   }
 }
 
+ul.notion-bulleted_list {
+  li.notion-bulleted_list_item {
+    height: fit-content;
+    min-height: 2.4rem;
+
+    position: relative;
+
+    --list-left-padding: 1.5rem;
+    padding-left: calc(var(--list-left-padding) * 2);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: var(--list-left-padding);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 1.5px;
+      background-color: $august-black;
+      border-radius: 10px;
+    }
+  }
+}
+
 .notion-image {
-  width: calc(16 * 24px);
-  height: calc(9 * 24px);
   margin: 2rem auto;
   border-radius: 1rem;
   overflow: hidden;
