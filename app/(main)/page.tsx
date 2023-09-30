@@ -16,7 +16,7 @@ import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   const [archives, tags] = await Promise.all([
-    getPagesHelper<PagesHelperResponse>('archive', 3, searchParams.cursor),
+    getPagesHelper<PagesHelperResponse>('archive', 5, searchParams.cursor),
     getTagListHelper<TagListHelperResponse>(),
   ])
 
