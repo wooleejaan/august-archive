@@ -426,3 +426,8 @@ ul.notion-bulleted_list {
     }
   }
 }
+
+.notion-column_list {
+  display: flex;
+  gap: 10px;
+}
