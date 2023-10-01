@@ -28,6 +28,7 @@ export default function UiHeroMainSection({
               href={`/${sectionType}/${slug}`}
               prefetch={true}
               shallow={true}
+              className={cx('link')}
             >
               <p className={cx('list')}>{title}</p>
             </Link>
