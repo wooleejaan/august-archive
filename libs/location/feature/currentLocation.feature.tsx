@@ -6,5 +6,5 @@ export default function CurrentLocation() {
   const headersList = headers()
   const headerUrl = headersList.get('x-url') || ''
 
-  return currentLocationName(headerUrl)
+  return currentLocationName(decodeURIComponent(headerUrl))
 }
