@@ -15,6 +15,9 @@ const META_ROOT: Metadata = {
   description:
     '새롭게 알게 된 것들, 직면하고 해결한 기술적인 문제들을 글로 정리하고 공유합니다.',
   metadataBase: new URL('https://august-archive.vercel.app/'),
+  other: {
+    'google-site-verification': '4mQ1kGw5zwnwMv2vGXlzALAuJNFxJVUCxi0xt8WOEv0',
+  },
 }
 
 const META_ARCHIVES = {
