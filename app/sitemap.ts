@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const URL = 'https://august-archive.vercel.app'
+const URL = 'https://www.augustarchives.kr'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [''].map((route) => ({
