@@ -350,6 +350,11 @@ p {
   & > a.notion-text-href {
     color: $august-black;
     border-bottom: 1px solid $august-black;
+
+    &:hover {
+      transition: 0.3s;
+      color: $august-dark-grey;
+    }
   }
 
   & > span {
