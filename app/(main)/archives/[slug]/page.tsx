@@ -1,26 +1,9 @@
 import { generateParamsMetadata } from '@/app/_meta'
-import bookmarkPlugin from '@notion-render/bookmark-plugin'
-import { NotionRenderer } from '@notion-render/client'
-// Plugins
-import hljsPlugin from '@notion-render/hljs-plugin'
-import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import 'highlight.js/styles/github-dark.css'
 
 import dynamic from 'next/dynamic'
-import { notFound } from 'next/navigation'
 
-import {
-  getPageBySlugHelper,
-  getPageContentHelper,
-} from '@/libs/_shared/apis/getNotion.api'
-import dateConverter from '@/libs/_shared/helpers/monthConverter.helper'
-import { notionClient } from '@/libs/_shared/helpers/notion.helper'
-import convertToGithubImage from '@/libs/_shared/hooks/convertToGithubImage.hook'
-import {
-  BlockObjectMoreResponse,
-  PageDetailHelperResponse,
-  PartialDetailPageObjectResponseMore,
-} from '@/libs/_shared/types/responses.type'
+import getPageDetail from '@/libs/_shared/hooks/getPageDetail.hook'
 import { DetailPageProps } from '@/libs/_shared/types/routers.type'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 import UiPostDetailContainer from '@/libs/postDetail/ui/postDetailContainer.ui'
@@ -32,49 +15,10 @@ const Gnb = dynamic(() => import('@/libs/gnb/feature/gnb.feature'), {
 export const generateMetadata = generateParamsMetadata
 
 export default async function ArchiveDetailPage({ params }: DetailPageProps) {
-  const archive = await getPageBySlugHelper<PageDetailHelperResponse>(
+  const { html, info: archiveInfo } = await getPageDetail(
     params.slug,
     'archive',
   )
-  if (!archive) notFound()
-
-  const polishedProps =
-    archive.properties as unknown as PartialDetailPageObjectResponseMore
-
-  const archiveInfo = {
-    createdTime: dateConverter(archive.created_time),
-    subTitle: polishedProps?.SubTitle.rich_text[0].plain_text,
-    category: polishedProps?.Category.multi_select.map((tag) => tag.name),
-    slug: polishedProps?.Slug.rich_text[0].plain_text,
-    title: polishedProps?.Title.title[0].plain_text,
-  }
-
-  const content = await getPageContentHelper<
-    Array<BlockObjectResponse & BlockObjectMoreResponse>
-  >(archive.id)
-
-  const updatedContent = await Promise.all(
-    content.map(async (c, index) => {
-      if (c.type === 'image') {
-        const customUrl = await convertToGithubImage(
-          archiveInfo.slug,
-          index,
-          c.image.file.url,
-        )
-        // eslint-disable-next-line no-param-reassign
-        c.image.file.url = customUrl
-      }
-      return c
-    }),
-  )
-
-  const notionRenderer = new NotionRenderer({
-    client: notionClient,
-  })
-
-  notionRenderer.use(hljsPlugin({}))
-  notionRenderer.use(bookmarkPlugin(undefined))
-  const html = await notionRenderer.render(...updatedContent)
 
   return (
     <main>
