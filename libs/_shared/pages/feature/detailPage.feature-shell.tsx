@@ -1,4 +1,4 @@
-import 'highlight.js/styles/github-dark.css'
+import 'highlight.js/styles/base16/atelier-cave-light.css'
 
 import dynamic from 'next/dynamic'
 
