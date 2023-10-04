@@ -37,6 +37,17 @@ export function middleware(req: NextRequest) {
     })
   }
 
+  if (pathname.startsWith('/performances')) {
+    const requestHeaders = new Headers(req.headers)
+    requestHeaders.set('x-url', pathname)
+
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    })
+  }
+
   if (pathname.startsWith('/tags')) {
     const requestHeaders = new Headers(req.headers)
     requestHeaders.set('x-url', pathname)

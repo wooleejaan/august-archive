@@ -15,9 +15,10 @@ import HeroMainArchives from '@/libs/heroMain/feature/heroMainArchives.feature'
 import CurrentLocation from '@/libs/location/feature/currentLocation.feature'
 
 export default async function HomePage({ searchParams }: HomePageProps) {
-  const [archives, algorithms, tags] = await Promise.all([
+  const [archives, algorithms, performances, tags] = await Promise.all([
     getPagesHelper<PagesHelperResponse>('archive', 5, searchParams.cursor),
     getPagesHelper<PagesHelperResponse>('algorithm', 5, searchParams.cursor),
+    getPagesHelper<PagesHelperResponse>('performance', 5, searchParams.cursor),
     getTagListHelper<TagListHelperResponse>(),
   ])
 
@@ -29,12 +30,17 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   const archiveList = convertToList(archives)
   const algorithmList = convertToList(algorithms)
+  const performanceList = convertToList(performances)
 
   return (
     <main>
       <HeroMain location={<CurrentLocation />} tags={tagList}>
         <HeroMainArchives section={archiveList} sectionName="archives" />
         <HeroMainArchives section={algorithmList} sectionName="algorithms" />
+        <HeroMainArchives
+          section={performanceList}
+          sectionName="performances"
+        />
       </HeroMain>
     </main>
   )
