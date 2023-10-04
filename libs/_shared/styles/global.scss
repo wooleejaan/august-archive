@@ -297,23 +297,11 @@ button {
 
 .notion-heading_3 {
   margin: 1rem 0;
-  background-color: $august-light-grey-25;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   font-size: 1.8rem;
   font-weight: 500;
   position: relative;
   word-break: break-all;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background-color: $august-black-50;
-    border-radius: 10px;
-  }
 }
 
 blockquote.notion-quote {

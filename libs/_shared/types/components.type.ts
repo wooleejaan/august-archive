@@ -45,6 +45,7 @@ interface SectionTypeProps {
 
 interface HeroMainSectionProps {
   section: SectionProps[]
+  sectionName?: string
 }
 
 interface UiListMainProps {
