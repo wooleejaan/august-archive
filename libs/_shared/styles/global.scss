@@ -253,51 +253,38 @@ button {
 
 .notion-heading_1 {
   position: relative;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-  background-color: $august-light-grey-25;
+  padding: 2.5rem 0 2.5rem 0;
   margin: 3rem 0;
   word-break: break-all;
 
   font-size: 2.2rem;
   font-weight: 500;
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background-color: $august-black-50;
-    border-radius: 10px;
-  }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   height: 100%;
+  //   width: 3px;
+  //   background-color: $august-black-50;
+  //   border-radius: 10px;
+  // }
 }
 
 .notion-heading_2 {
   margin: 2rem 0;
-  background-color: $august-light-grey-25;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 2rem 0 2rem 0;
   word-break: break-all;
 
   font-size: 2rem;
   font-weight: 500;
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background-color: $august-black-50;
-    border-radius: 10px;
-  }
 }
 
 .notion-heading_3 {
   margin: 1rem 0;
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  padding: 1rem 0 1rem 0;
   font-size: 1.8rem;
   font-weight: 500;
   position: relative;
@@ -310,6 +297,7 @@ blockquote.notion-quote {
   background-color: $august-background;
   color: $august-black;
   border-radius: 10px;
+  border: 1px solid $august-black;
 
   filter: drop-shadow(1px 1px 2px $august-black);
 }
@@ -386,7 +374,9 @@ ul.notion-bulleted_list {
   margin: 2rem auto;
   border-radius: 1rem;
   overflow: hidden;
-  // filter: drop-shadow(1px 1px 2px $august-black);
+
+  border: 1px solid $august-black;
+  filter: drop-shadow(1px 1px 2px $august-black);
 
   @include mobile {
     width: 100%;
@@ -401,11 +391,14 @@ ul.notion-bulleted_list {
 }
 
 .notion-code {
-  background-color: #444;
+  // background-color: #444;
+  background-color: $august-background;
+  border: 1px solid $august-black;
   padding: 2rem;
   border-radius: 1rem;
   margin: 2rem auto;
-  // filter: drop-shadow(1px 1px 2px $august-black);
+
+  filter: drop-shadow(1px 1px 2px $august-black);
 
   pre {
     overflow: auto;
@@ -417,7 +410,7 @@ ul.notion-bulleted_list {
     }
 
     code {
-      color: $august-background;
+      color: $august-black;
     }
   }
 }
