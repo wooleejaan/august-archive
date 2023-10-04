@@ -28,6 +28,10 @@ const META_ALGORITHMS = {
   title: 'algorithms | august archives',
 }
 
+const META_PERFORMANCES = {
+  title: 'performances | august archives',
+}
+
 interface GenerateParamsMetadataProps {
   params: { slug: string }
 }
@@ -68,6 +72,7 @@ export {
   META_ROOT,
   META_ARCHIVES,
   META_ALGORITHMS,
+  META_PERFORMANCES,
   generateParamsMetadata,
   generateParamsTagsMetadata,
 }

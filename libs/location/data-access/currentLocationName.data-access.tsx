@@ -115,6 +115,56 @@ const currentLocationName = (pathname: string) => {
     )
   }
 
+  if (pathname === '/performances') {
+    return (
+      <div className={cx('linkContainer')}>
+        <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
+          august
+        </Link>
+        <UiSlashPadding />
+        <Link
+          href="/performances"
+          className={cx('link')}
+          prefetch={true}
+          shallow={true}
+        >
+          performances
+        </Link>
+      </div>
+    )
+  }
+
+  if (pathname.includes('/performances/')) {
+    const locationName = pathname
+      .replace('/performances/', '')
+      .replaceAll('-', ' ')
+    return (
+      <div className={cx('linkContainer')}>
+        <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
+          august
+        </Link>
+        <UiSlashPadding />
+        <Link
+          href="/performances"
+          className={cx('link')}
+          prefetch={true}
+          shallow={true}
+        >
+          performances
+        </Link>
+        <UiSlashPadding />
+        <Link
+          href={pathname}
+          className={cx('link')}
+          prefetch={true}
+          shallow={true}
+        >
+          {locationName}
+        </Link>
+      </div>
+    )
+  }
+
   if (pathname.includes('/tags/')) {
     const locationName = pathname.replace('/tags/', '').replaceAll('-', ' ')
     return (
