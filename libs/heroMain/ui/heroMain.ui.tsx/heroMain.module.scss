@@ -1,6 +1,8 @@
 .heroWrapper {
+  --hero-w: calc(1920px - 126rem);
+
   width: 100%;
-  max-width: calc(1920px - 126rem);
+  max-width: var(--hero-w);
   margin: 0 auto;
   padding: 12.8rem 0;
 
@@ -50,6 +52,12 @@
     @include fade-in-animation(1.5s);
 
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
+    gap: calc(var(--hero-w) / 10);
+
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }
