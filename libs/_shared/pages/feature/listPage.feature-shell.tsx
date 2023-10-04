@@ -13,7 +13,7 @@ export default async function ListPageFeature({
 
   return (
     <main>
-      <UiListMain listTitle="archives" location={<CurrentLocation />}>
+      <UiListMain listTitle={`${property}s`} location={<CurrentLocation />}>
         <ListMainSection section={archiveList} />
       </UiListMain>
     </main>
