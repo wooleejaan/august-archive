@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 const URL = 'https://www.augustarchives.kr'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [''].map((route) => ({
+  const routes = ['', '/tags', '/algorithms', '/archives'].map((route) => ({
     url: `${URL}${route}`,
     lastModified: new Date().toISOString(),
   }))
