@@ -317,12 +317,14 @@ p {
 
   code.notion-text-code {
     display: inline-block;
-    background-color: $august-light-grey;
+    background-color: $august-light-grey-50;
+    color: #955ae7;
     height: 80%;
     line-height: 100%;
     min-width: fit-content;
     margin-right: 0.2rem;
     margin-left: 0.2rem;
+    padding: 0.4rem;
   }
 
   & > a.notion-text-href {
