@@ -401,6 +401,7 @@ ul.notion-bulleted_list {
   filter: drop-shadow(1px 1px 2px $august-black);
 
   pre {
+    font-size: 12px;
     overflow: auto;
     -ms-overflow-style: none; /*IE, Edge*/
     scrollbar-width: none; /*Firefox*/
