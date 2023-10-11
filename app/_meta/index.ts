@@ -28,6 +28,10 @@ const META_ALGORITHMS = {
   title: 'algorithms | august archives',
 }
 
+const META_COMPUTER_SCIENCE = {
+  title: 'computer science | august archives',
+}
+
 const META_PERFORMANCES = {
   title: 'performances | august archives',
 }
@@ -47,7 +51,7 @@ const generateParamsMetadata = async function generateMetadata({
 
   const page = await getPageBySlugHelper<PageDetailHelperResponse>(
     slug,
-    containProperty,
+    containProperty === 'c' ? 'cs' : containProperty,
   )
 
   return {
@@ -72,6 +76,7 @@ export {
   META_ROOT,
   META_ARCHIVES,
   META_ALGORITHMS,
+  META_COMPUTER_SCIENCE,
   META_PERFORMANCES,
   generateParamsMetadata,
   generateParamsTagsMetadata,
