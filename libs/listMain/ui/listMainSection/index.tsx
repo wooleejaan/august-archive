@@ -18,7 +18,9 @@ export default function ListMainSection({ section }: ListMainSectionProps) {
           <li key={slug} className={cx(`index${index}`)}>
             <UiSpacing size={32} />
             <Link
-              href={`/${sectionType}s/${slug}`}
+              href={
+                sectionType === 'cs' ? `cs/${slug}` : `/${sectionType}s/${slug}`
+              }
               prefetch={true}
               shallow={true}
               key={slug}

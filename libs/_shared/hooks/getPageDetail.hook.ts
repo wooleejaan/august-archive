@@ -19,10 +19,12 @@ import {
 } from '@/libs/_shared/types/responses.type'
 
 const getPageDetail = async (slug: string, property: string) => {
+  const decodedSlug = decodeURIComponent(slug)
   const page = await getPageBySlugHelper<PageDetailHelperResponse>(
-    slug,
+    decodedSlug,
     property,
   )
+
   if (!page) notFound()
 
   const polishedProps =
