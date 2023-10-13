@@ -115,7 +115,7 @@ const currentLocationName = (pathname: string) => {
     )
   }
 
-  if (pathname === '/performances') {
+  if (pathname === '/graphics') {
     return (
       <div className={cx('linkContainer')}>
         <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
@@ -123,21 +123,19 @@ const currentLocationName = (pathname: string) => {
         </Link>
         <UiSlashPadding />
         <Link
-          href="/performances"
+          href="/graphics"
           className={cx('link')}
           prefetch={true}
           shallow={true}
         >
-          performances
+          graphics
         </Link>
       </div>
     )
   }
 
-  if (pathname.includes('/performances/')) {
-    const locationName = pathname
-      .replace('/performances/', '')
-      .replaceAll('-', ' ')
+  if (pathname.includes('/graphics/')) {
+    const locationName = pathname.replace('/graphics/', '').replaceAll('-', ' ')
     return (
       <div className={cx('linkContainer')}>
         <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
@@ -145,50 +143,12 @@ const currentLocationName = (pathname: string) => {
         </Link>
         <UiSlashPadding />
         <Link
-          href="/performances"
+          href="/graphics"
           className={cx('link')}
           prefetch={true}
           shallow={true}
         >
-          performances
-        </Link>
-        <UiSlashPadding />
-        <Link
-          href={pathname}
-          className={cx('link')}
-          prefetch={true}
-          shallow={true}
-        >
-          {locationName}
-        </Link>
-      </div>
-    )
-  }
-
-  if (pathname === '/cs') {
-    return (
-      <div className={cx('linkContainer')}>
-        <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
-          august
-        </Link>
-        <UiSlashPadding />
-        <Link href="/cs" className={cx('link')} prefetch={true} shallow={true}>
-          cs
-        </Link>
-      </div>
-    )
-  }
-
-  if (pathname.includes('/cs/')) {
-    const locationName = pathname.replace('/cs/', '').replaceAll('-', ' ')
-    return (
-      <div className={cx('linkContainer')}>
-        <Link href="/" className={cx('link')} prefetch={true} shallow={true}>
-          august
-        </Link>
-        <UiSlashPadding />
-        <Link href="/cs" className={cx('link')} prefetch={true} shallow={true}>
-          cs
+          graphics
         </Link>
         <UiSlashPadding />
         <Link

@@ -16,10 +16,9 @@ export default function UiHeroMainSection({
   section,
   sectionType,
 }: HeroMainSectionProps & SectionTypeProps) {
-  const sectionTitle = sectionType.replace('-', ' ')
   return (
     <section className={cx('projectsWrapper')}>
-      <Heading3 id={sectionType}>{sectionTitle}</Heading3>
+      <Heading3 id={sectionType}>{sectionType}</Heading3>
       <ol className={cx('previewContainer')}>
         {section.map(({ slug, title }) => (
           <li key={title}>
