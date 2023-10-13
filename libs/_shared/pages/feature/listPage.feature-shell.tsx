@@ -10,13 +10,9 @@ export default async function ListPageFeature({
   cursor,
 }: ListPageFeatureProps) {
   const { list: archiveList } = await getPageList(property, pageSize, cursor)
-
   return (
     <main>
-      <UiListMain
-        listTitle={property === 'cs' ? 'cS' : `${property}s`}
-        location={<CurrentLocation />}
-      >
+      <UiListMain listTitle={`${property}s`} location={<CurrentLocation />}>
         <ListMainSection section={archiveList} />
       </UiListMain>
     </main>

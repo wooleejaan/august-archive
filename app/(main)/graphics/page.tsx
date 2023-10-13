@@ -1,14 +1,14 @@
-import { META_ALGORITHMS } from '@/app/_meta'
+import { META_GRAPHICS } from '@/app/_meta'
 
 import ListPageFeature from '@/libs/_shared/pages/feature/listPage.feature-shell'
 import { ListPageProps } from '@/libs/_shared/types/routers.type'
 
-export const metadata = META_ALGORITHMS
+export const metadata = META_GRAPHICS
 
-export default async function PerformancePage({ searchParams }: ListPageProps) {
+export default async function GraphicPage({ searchParams }: ListPageProps) {
   return (
     <ListPageFeature
-      property="performance"
+      property="graphic"
       pageSize={10}
       cursor={searchParams.cursor}
     />

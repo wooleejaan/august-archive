@@ -5,8 +5,6 @@ import { DetailPageProps } from '@/libs/_shared/types/routers.type'
 
 export const generateMetadata = generateParamsMetadata
 
-export default async function ComputerScienceDetailPage({
-  params,
-}: DetailPageProps) {
-  return <DetailPageFeature slug={params.slug} property="cs" />
+export default async function GraphicDetailPage({ params }: DetailPageProps) {
+  return <DetailPageFeature slug={params.slug} property="graphic" />
 }

@@ -28,12 +28,8 @@ const META_ALGORITHMS = {
   title: 'algorithms | august archives',
 }
 
-const META_COMPUTER_SCIENCE = {
-  title: 'computer science | august archives',
-}
-
-const META_PERFORMANCES = {
-  title: 'performances | august archives',
+const META_GRAPHICS = {
+  title: 'graphics | august archives',
 }
 
 interface GenerateParamsMetadataProps {
@@ -51,7 +47,7 @@ const generateParamsMetadata = async function generateMetadata({
 
   const page = await getPageBySlugHelper<PageDetailHelperResponse>(
     slug,
-    containProperty === 'c' ? 'cs' : containProperty,
+    containProperty,
   )
 
   return {
@@ -76,8 +72,7 @@ export {
   META_ROOT,
   META_ARCHIVES,
   META_ALGORITHMS,
-  META_COMPUTER_SCIENCE,
-  META_PERFORMANCES,
+  META_GRAPHICS,
   generateParamsMetadata,
   generateParamsTagsMetadata,
 }
