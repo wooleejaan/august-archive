@@ -9,7 +9,7 @@ export default async function AlgorithmsPage({ searchParams }: ListPageProps) {
   return (
     <ListPageFeature
       property="algorithm"
-      pageSize={10}
+      pageSize={99}
       cursor={searchParams.cursor}
     />
   )

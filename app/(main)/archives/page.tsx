@@ -9,7 +9,7 @@ export default async function ArchivesPage({ searchParams }: ListPageProps) {
   return (
     <ListPageFeature
       property="archive"
-      pageSize={10}
+      pageSize={99}
       cursor={searchParams.cursor}
     />
   )
