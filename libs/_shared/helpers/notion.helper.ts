@@ -42,7 +42,7 @@ export const getTagPages = (containProperty: string, startCursor?: string) =>
       ],
     },
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string,
-    page_size: 10,
+    page_size: 99,
     start_cursor: startCursor,
   })
 

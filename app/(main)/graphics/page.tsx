@@ -9,7 +9,7 @@ export default async function GraphicPage({ searchParams }: ListPageProps) {
   return (
     <ListPageFeature
       property="graphic"
-      pageSize={10}
+      pageSize={99}
       cursor={searchParams.cursor}
     />
   )
