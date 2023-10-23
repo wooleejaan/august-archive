@@ -13,37 +13,28 @@
   .bioContainer {
     margin-bottom: 3.2rem;
 
-    .contacts {
-      @include fade-in-animation(1.2s);
+    .underLink {
+      display: inline-flex;
+      position: relative;
+      width: fit-content;
 
-      display: flex;
-      gap: 0.8rem;
-
-      @include tablet {
-        gap: 0.6rem;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 1px;
+        width: 100%;
+        height: 1.5px;
+        transition: 0.3s;
+        background-color: $august-dark-grey;
       }
 
-      .imgContainer {
-        display: block;
-        width: 2.2rem;
-        height: 2.2rem;
+      &:hover {
+        color: $august-dark-grey-50;
+      }
 
-        @include tablet {
-          width: 1.8rem;
-          height: 1.8rem;
-        }
-
-        &:hover {
-          filter: invert(45%) sepia(3%) saturate(7%) hue-rotate(315deg)
-            brightness(88%) contrast(102%);
-        }
-
-        .img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+      &:hover::after {
+        background-color: $august-dark-grey-50;
       }
     }
   }
