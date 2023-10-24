@@ -1,0 +1,35 @@
+.contacts {
+  @include fade-in-animation(1.2s);
+
+  display: flex;
+  gap: 0.8rem;
+
+  @include tablet {
+    gap: 0.6rem;
+  }
+
+  .imgContainer {
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    transition: all 0.5s;
+
+    @include tablet {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    &:hover {
+      filter: invert(45%) sepia(3%) saturate(7%) hue-rotate(315deg)
+        brightness(88%) contrast(102%);
+      transition: all 1s;
+    }
+
+    .img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

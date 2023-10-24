@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind'
 
 import { UiPostDetailContainerProps } from '@/libs/_shared/types/components.type'
-import ChipContainer from '@/libs/chip/chipContainer.feature'
 import UiDividing from '@/libs/dividing/ui/dividing.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
 
@@ -13,7 +12,6 @@ export default function UiPostDetailContainer({
   content,
   createdTime,
   subTitle,
-  category,
   title,
   location,
 }: UiPostDetailContainerProps) {
@@ -38,7 +36,6 @@ export default function UiPostDetailContainer({
       <UiSpacing size={48} />
       <UiDividing lineColor="#d1d1d180" />
       <UiSpacing size={16} />
-      <ChipContainer chipList={category} />
     </article>
   )
 }

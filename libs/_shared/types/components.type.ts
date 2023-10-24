@@ -31,7 +31,6 @@ interface UiHeading3Props extends HTMLAttributes<HTMLHeadingElement> {
 interface HeroMainProps {
   children: React.ReactNode
   location: React.ReactElement
-  tags: string[]
 }
 
 interface SectionProps {
