@@ -23,7 +23,8 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           복잡함보다는 단순함을, 장황한 것보다는 함축적이고 추상적인 것을
           선호합니다.
           <br />
-          복잡하게 얽힌 문제를 쉽게 풀어낼 때 쾌감을 느낍니다.
+          복잡하게 얽힌 문제를 쉽게 풀어낼 때와 불필요한 것들을 덜어낼 때, 그
+          과정에서 오는 뿌듯함을 즐깁니다.
         </UiParagraph>
         <UiParagraph>
           기술 지식은{' '}
