@@ -10,9 +10,9 @@ const cx = classNames.bind(styles)
 
 export default function UiPostDetailContainer({
   content,
-  createdTime,
   subTitle,
   title,
+  date,
   location,
 }: UiPostDetailContainerProps) {
   return (
@@ -23,7 +23,7 @@ export default function UiPostDetailContainer({
         <h3 className={cx('title')}>{title}</h3>
         <p className={cx('subTitle')}>{subTitle}</p>
         <div className={cx('infoContainer')}>
-          <span className={cx('created')}>{createdTime}</span>
+          <span className={cx('created')}>{date}</span>
         </div>
         <UiSpacing size={12} />
         <UiDividing lineColor="#d1d1d180" />

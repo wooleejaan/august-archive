@@ -13,30 +13,24 @@ const cx = classNames.bind(styles)
 export default function ListMainSection({ section }: ListMainSectionProps) {
   return (
     <ol className={cx('sectionContainer')}>
-      {section.map(
-        ({ slug, title, subTitle, createdDate, sectionType }, index) => (
-          <li key={slug} className={cx(`index${index}`)}>
-            <UiSpacing size={32} />
-            <Link
-              href={`/${sectionType}s/${slug}`}
-              prefetch={true}
-              shallow={true}
-              key={slug}
-              className={cx('section')}
-            >
-              <p className={cx('title')}>{title}</p>
-              <p className={cx('subTitle')}>{subTitle}</p>
-              <p className={cx('date')}>{createdDate}</p>
-            </Link>
-            <UiSpacing size={32} />
-            <UiDividing
-              lineWeight={0.1}
-              lineColor="#d1d1d1"
-              lineOpacity={0.1}
-            />
-          </li>
-        ),
-      )}
+      {section.map(({ slug, title, subTitle, sectionType, date }, index) => (
+        <li key={slug} className={cx(`index${index}`)}>
+          <UiSpacing size={32} />
+          <Link
+            href={`/${sectionType}s/${slug}`}
+            prefetch={true}
+            shallow={true}
+            key={slug}
+            className={cx('section')}
+          >
+            <p className={cx('title')}>{title}</p>
+            <p className={cx('subTitle')}>{subTitle}</p>
+            <p className={cx('date')}>{date}</p>
+          </Link>
+          <UiSpacing size={32} />
+          <UiDividing lineWeight={0.1} lineColor="#d1d1d1" lineOpacity={0.1} />
+        </li>
+      ))}
     </ol>
   )
 }
