@@ -18,6 +18,8 @@ import {
   PartialDetailPageObjectResponseMore,
 } from '@/libs/_shared/types/responses.type'
 
+import dateTextConverter from '../helpers/dateTextConverter.helper'
+
 const getPageDetail = async (slug: string, property: string) => {
   const decodedSlug = decodeURIComponent(slug)
   const page = await getPageBySlugHelper<PageDetailHelperResponse>(
@@ -36,6 +38,7 @@ const getPageDetail = async (slug: string, property: string) => {
     category: polishedProps?.Category.multi_select.map((tag) => tag.name),
     slug: polishedProps?.Slug.rich_text[0].plain_text,
     title: polishedProps?.Title.title[0].plain_text,
+    date: dateTextConverter(polishedProps?.Date.date.start as string),
   }
 
   const content = await getPageContentHelper<

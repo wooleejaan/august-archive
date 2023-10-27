@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 
 import { getPagesHelper } from '@/libs/_shared/apis/getNotion.api'
+import dateTextConverter from '@/libs/_shared/helpers/dateTextConverter.helper'
 import dateConverter from '@/libs/_shared/helpers/monthConverter.helper'
 import {
   PagesHelperResponse,
@@ -26,6 +27,7 @@ const getPageList = async (
     subTitle: string
     createdDate: string
     sectionType: string
+    date: string
   }> = []
 
   // eslint-disable-next-line no-restricted-syntax
@@ -36,6 +38,7 @@ const getPageList = async (
       subTitle: archive.properties?.SubTitle.rich_text[0].plain_text as string,
       createdDate: dateConverter(archive.created_time),
       sectionType: archive.properties?.Status.multi_select[1].name as string,
+      date: dateTextConverter(archive.properties?.Date.date.start as string),
     })
   }
 
