@@ -59,6 +59,7 @@ interface ListSectionProps {
   subTitle: string
   createdDate: string
   sectionType: string
+  date: string
 }
 
 interface ListMainSectionProps {
@@ -74,11 +75,12 @@ interface UiParagraphProps extends HTMLAttributes<HTMLSpanElement> {
 
 interface UiPostDetailContainerProps {
   content: string
-  createdTime: string
+  createdTime?: string
   subTitle: string
   category: string[]
   slug: string
   title: string
+  date: string
   location: React.ReactElement
 }
 

@@ -18,6 +18,15 @@ interface PartialPageObjectResponseMore {
     Status: {
       multi_select: Array<{ name: string }>
     }
+    Date: {
+      id: string
+      type: string
+      date: {
+        start: string
+        end: string | null
+        time_zone: string | null
+      }
+    }
   }
 }
 
@@ -33,6 +42,15 @@ interface PartialDetailPageObjectResponseMore {
   }
   Category: {
     multi_select: Array<{ name: string }>
+  }
+  Date: {
+    id: string
+    type: string
+    date: {
+      start: string
+      end: string | null
+      time_zone: string | null
+    }
   }
 }
 
