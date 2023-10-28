@@ -20,8 +20,11 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
         <UiParagraph>
           정적이면서도 부드러운 인터페이스와 정제되고 작은 그래픽을 좋아합니다.
           <br />
+          <br />
           복잡함보다는 단순함을, 장황한 것보다는 함축적이고 추상적인 것을
           선호합니다.
+          <br />
+          일상적인 사물을 낯선 시선으로 재정의하는 걸 좋아합니다.
           <br />
           복잡하게 얽힌 문제를 쉽게 풀어낼 때와 불필요한 것들을 덜어낼 때, 그
           과정에서 오는 뿌듯함을 즐깁니다.
