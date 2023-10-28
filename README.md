@@ -1,11 +1,28 @@
-# august-archive
+# August Archives
 
-배우고 느낀 것들을 모아두는 공간
+next js + notion api로 제작한 개인 블로그입니다.
+
+기술 지식은 전혀 다루지 않으며, 개발자로 살아가면서 발견한 풍경이나 느낀 감정 같은 것들을 주로 붙잡고 늘어집니다.
+![Alt text](/public/images/preview.png)
 
 ## Wiki
 
-[Branching Strategy](https://github.com/wooleejaan/august-archive/wiki/Branching-Strategy)</br>
-[Conventional Commits](https://github.com/wooleejaan/august-archive/wiki/Conventional-Commits)</br>
-[Design Pattern](https://github.com/wooleejaan/august-archive/wiki/Design-Pattern)</br>
-[Folder Structure](https://github.com/wooleejaan/august-archive/wiki/Folder-Structure)</br>
-[Tech Stack](https://github.com/wooleejaan/august-archive/wiki/Tech-Stack)</br>
+### Branching Strategy
+
+[Branching Strategy](https://github.com/wooleejaan/august-archive/wiki/Branching-Strategy)
+
+### Conventional Commits
+
+[Conventional Commits](https://github.com/wooleejaan/august-archive/wiki/Conventional-Commits)
+
+### Design Pattern
+
+[Design Pattern](https://github.com/wooleejaan/august-archive/wiki/Design-Pattern)
+
+### Folder Structure
+
+[Folder Structure](https://github.com/wooleejaan/august-archive/wiki/Folder-Structure)
+
+### Tech Stack
+
+[Tech Stack](https://github.com/wooleejaan/august-archive/wiki/Tech-Stack)
