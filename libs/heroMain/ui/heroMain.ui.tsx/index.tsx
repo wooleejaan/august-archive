@@ -30,7 +30,7 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           과정에서 오는 뿌듯함을 즐깁니다.
         </UiParagraph>
         <UiParagraph>
-          기술 지식은{' '}
+          기술적으로 학습하고 있는 것들은{' '}
           <Link
             className={cx('underLink')}
             href="https://github.com/wooleejaan/yw-playgrounds"
