@@ -3,7 +3,7 @@
 This project is an archive created using the Next.js App router and the Notion API.<br>
 I created this archive to remember the emotions and preferences that I personally cherish.
 
-![Alt text](/public/images/preview.png)
+![Alt text](/public/images/preview-main.png)
 
 ## Wiki & Features
 
