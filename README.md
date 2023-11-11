@@ -1,6 +1,7 @@
 # August Archives
 
-This project is an archive created using the Next.js App router and the Notion API. This archive is a space where I capture personally cherished emotions and preferences.
+This project is an archive created using the Next.js App router and the Notion API.<br>
+I created this archive to remember the emotions and preferences that I personally cherish.
 
 ![Alt text](/public/images/preview.png)
 
