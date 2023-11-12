@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind'
 
+import Link from 'next/link'
+
 import { HeroMainProps } from '@/libs/_shared/types/components.type'
 import UiParagraph from '@/libs/paragraph/ui/paragraph.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
@@ -29,6 +31,16 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
         </UiParagraph>
         <UiParagraph>
           이 곳은 지극히 취미의 영역입니다. 사랑하는 것들을 게시합니다.
+          <br />
+          기술적으로 학습하는 내용은{' '}
+          <Link
+            className={cx('underLink')}
+            href="https://github.com/wooleejaan/yw-playgrounds/tree/main/_red-trees"
+            target="_blank"
+          >
+            Github
+          </Link>
+          에 기록하고 있습니다.
         </UiParagraph>
         <UiContacts />
       </section>
