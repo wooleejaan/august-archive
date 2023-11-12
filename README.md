@@ -7,22 +7,8 @@ I created this archive to remember the emotions and preferences that I personall
 
 ## Wiki & Features
 
-### Branching Strategy
-
-[Branching Strategy](https://github.com/wooleejaan/august-archive/wiki/Branching-Strategy)
-
-### Conventional Commits
-
-[Conventional Commits](https://github.com/wooleejaan/august-archive/wiki/Conventional-Commits)
-
-### Design Pattern
-
-[Design Pattern](https://github.com/wooleejaan/august-archive/wiki/Design-Pattern)
-
-### Folder Structure
-
-[Folder Structure](https://github.com/wooleejaan/august-archive/wiki/Folder-Structure)
-
-### Tech Stack
-
-[Tech Stack](https://github.com/wooleejaan/august-archive/wiki/Tech-Stack)
+- [Branching Strategy](https://github.com/wooleejaan/august-archive/wiki/Branching-Strategy)
+- [Conventional Commits](https://github.com/wooleejaan/august-archive/wiki/Conventional-Commits)
+- [Design Pattern](https://github.com/wooleejaan/august-archive/wiki/Design-Pattern)
+- [Folder Structure](https://github.com/wooleejaan/august-archive/wiki/Folder-Structure)
+- [Tech Stack](https://github.com/wooleejaan/august-archive/wiki/Tech-Stack)
