@@ -35,10 +35,10 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           기술적으로 학습하는 내용은{' '}
           <Link
             className={cx('underLink')}
-            href="https://github.com/wooleejaan/yw-playgrounds/tree/main/_red-trees"
+            href="https://yongwoo.oopy.io/"
             target="_blank"
           >
-            Github
+            기술 블로그
           </Link>
           에 기록하고 있습니다.
         </UiParagraph>
