@@ -31,7 +31,7 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           일상적인 사물을 낯선 시선으로 재정의할 줄 아는 사람이 되고 싶습니다.
         </UiParagraph>
         <UiParagraph>
-          이 곳은 지극히 취미의 영역입니다. 사랑하는 것들을 게시합니다.
+          이곳은 지극히 취미의 영역입니다. 사랑하는 것들을 게시합니다.
           <br />
           기술적으로 학습하는 내용은{' '}
           <Link
