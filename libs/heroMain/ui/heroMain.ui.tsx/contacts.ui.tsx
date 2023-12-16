@@ -25,18 +25,25 @@ export default function UiContacts() {
         <img src="/images/velog.svg" alt="velog" className={cx('img')} />
       </Link>
       <Link
+        href="https://medium.com/@wooleejaan"
+        target="_blank"
+        className={cx('imgContainer')}
+      >
+        <img src="/images/medium.svg" alt="medium" className={cx('img')} />
+      </Link>
+      <Link
+        href="https://www.linkedin.com/in/wooleejaan/"
+        target="_blank"
+        className={cx('imgContainer')}
+      >
+        <img src="/images/linkedin.svg" alt="linkedin" className={cx('img')} />
+      </Link>
+      <Link
         href="mailto:wooleejaan@gmail.com"
         target="_blank"
         className={cx('imgContainer')}
       >
         <img src="/images/email.svg" alt="email" className={cx('img')} />
-      </Link>
-      <Link
-        href="https://loving-kilogram-ebd.notion.site/3d544d66a8714b4eb61df3b51cc3dfa7"
-        target="_blank"
-        className={cx('imgContainer')}
-      >
-        <img src="/images/notion.svg" alt="notion" className={cx('img')} />
       </Link>
     </div>
   )

@@ -1,7 +1,5 @@
 import classNames from 'classnames/bind'
 
-import Link from 'next/link'
-
 import { HeroMainProps } from '@/libs/_shared/types/components.type'
 import UiParagraph from '@/libs/paragraph/ui/paragraph.ui'
 import UiSpacing from '@/libs/spacing/ui/spacing.ui'
@@ -30,19 +28,7 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           <br />
           일상적인 사물을 낯선 시선으로 재정의할 줄 아는 사람이 되고 싶습니다.
         </UiParagraph>
-        <UiParagraph>
-          이곳은 지극히 취미의 영역입니다. 사랑하는 것들을 게시합니다.
-          <br />
-          기술적으로 학습하는 내용은{' '}
-          <Link
-            className={cx('underLink')}
-            href="https://medium.com/@wooleejaan"
-            target="_blank"
-          >
-            기술 블로그
-          </Link>
-          에 기록하고 있습니다.
-        </UiParagraph>
+        <UiParagraph>이곳은 지극히 취미의 영역일 뿐입니다.</UiParagraph>
         <UiContacts />
       </section>
       <article className={cx('previewContainer')}>{children}</article>
