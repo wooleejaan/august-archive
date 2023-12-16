@@ -36,7 +36,7 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           기술적으로 학습하는 내용은{' '}
           <Link
             className={cx('underLink')}
-            href="https://yongwoo.oopy.io/"
+            href="https://medium.com/@wooleejaan"
             target="_blank"
           >
             기술 블로그
