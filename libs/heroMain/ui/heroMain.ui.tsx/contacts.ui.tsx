@@ -25,11 +25,11 @@ export default function UiContacts() {
         <img src="/images/velog.svg" alt="velog" className={cx('img')} />
       </Link>
       <Link
-        href="https://medium.com/@wooleejaan"
+        href="https://publish.obsidian.md/yongwoo"
         target="_blank"
         className={cx('imgContainer')}
       >
-        <img src="/images/medium.svg" alt="medium" className={cx('img')} />
+        <img src="/images/obsidian.svg" alt="obsidian" className={cx('img')} />
       </Link>
       <Link
         href="https://www.linkedin.com/in/wooleejaan/"

@@ -28,7 +28,7 @@ export default function UiHeroMain({ children, location }: HeroMainProps) {
           <br />
           일상적인 사물을 낯선 시선으로 재정의할 줄 아는 사람이 되고 싶습니다.
         </UiParagraph>
-        <UiParagraph>이곳은 지극히 취미의 영역일 뿐입니다.</UiParagraph>
+        <UiParagraph>이곳에서는 개발 외적인 것들을 다룹니다.</UiParagraph>
         <UiContacts />
       </section>
       <article className={cx('previewContainer')}>{children}</article>
