@@ -3,8 +3,6 @@
 This project is an archive created using the Next.js App router and the Notion API.<br>
 I created this archive to remember the emotions and preferences that I personally cherish.
 
-![Alt text](/public/images/preview-main.png)
-
 ## Wiki & Features
 
 - [Branching Strategy](https://github.com/wooleejaan/august-archive/wiki/Branching-Strategy)
